@@ -1,0 +1,1 @@
+Dans le menu création de classe, créer le nombre de classe selon la valeur saisie dans nbNiveau avec une boucle.

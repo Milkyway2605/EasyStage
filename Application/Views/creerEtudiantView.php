@@ -19,8 +19,29 @@ include_once '../Application/Base/layout_content_01.php';
 <?php
 include_once '../Application/Base/layout_content_02.php';
 ?>
-    
- <article class='article col-lg-10 col-lg-offset-1 col-md-12'>
+
+<?php
+    if(isset($succes))
+    {
+        if($succes == true)
+        {
+            echo('<div class="alert-container col-lg-10 col-lg-offset-1 col-md-12">
+                    <div class="alert-success">
+                        La création de l\'étudiant à réussie :-) .
+                    </div>
+                </div>');
+        }
+        else 
+        {
+            echo('<div class="alert-container col-lg-10 col-lg-offset-1 col-md-12">
+                    <div class="alert-danger">
+                        La création de l\'étudiant à échoué :-( .
+                    </div>
+                </div>');
+        }
+    }
+?>
+<article class='article col-lg-10 col-lg-offset-1 col-md-12'>
     <div class='panel'>
         <div class='panel-heading'>
             <div class="panel-title">Création d'un étudiant</div>

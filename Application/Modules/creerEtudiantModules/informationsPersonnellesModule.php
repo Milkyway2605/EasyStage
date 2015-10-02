@@ -20,7 +20,7 @@
                                 <div class="col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1
                                 col-sm-5 col-sm-offset-1">
                                     <label for="masculin" class="radio-inline">
-                                        <input type="radio" name="sexe" value="masculin" id="masculin">
+                                        <input type="radio" name="sexe" value="0" id="masculin">
                                         Masculin 
                                     </label>
                                 </div>
@@ -28,11 +28,11 @@
                                 <div class="col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1
                                 col-sm-5 col-sm-offset-1">
                                     <label for="feminin" class="radio-inline">
-                                        <input type="radio" name="sexe" value="feminin" id="feminin">
+                                        <input type="radio" name="sexe" value="1" id="feminin">
                                         Féminin 
                                     </label>
                                 </div>
-                            </fieldset>              
+                            </fieldset>
                         </div>
 
                     </div>

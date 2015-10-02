@@ -4,16 +4,22 @@
                         <div class="form-group">
                         <label for="section">Section : </label>
                         <select id="section" name="section" class="form-control">
-                            <option value="SIO">SIO</option>
-                            <option>MUC</option>
-                            <option>Etudiant</option>
+                            <?php
+                            
+                                $lesSection = getSection($connexion);
+                                foreach($lesSection as $uneSection)
+                                {
+                                    echo('<option data-nbNiveau="'.$uneSection['nbNiveau']
+                                        .'" value="'.$uneSection['codeSection'].'">'
+                                        .$uneSection['libelleSection'].'</option>');
+                                }
+                                
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="niveau">Niveau : </label>
                         <select id="niveau" name="niveau" class="form-control">
-                            <option value="1">1ère année</option>
-                            <option value="2">2ème année</option>
                         </select>
                     </div>
 

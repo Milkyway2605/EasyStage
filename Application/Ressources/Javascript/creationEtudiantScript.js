@@ -1,5 +1,21 @@
 var tabPage = 0;
- 
+changeNiveau();
+
+function changeNiveau()
+{
+    var nbNiveau = parseInt($('#section option:selected').attr('data-nbNiveau'));
+    var suffixe = "ère";
+
+    for(var i = 1 ; i < nbNiveau + 1 ; i++)
+    {
+        if( i !== 1)
+        {
+            suffixe = "ème";
+        }
+        $('#niveau').append('<option value="'+ i +'">'+ i + suffixe +' année</option>');
+    }
+}
+
 $('#btnNext').click(function(e)
 {   
     if($('#creerEtudiant')[0].checkValidity() === true)
@@ -115,3 +131,15 @@ $('a.step').click(function(e)
 {
     e.preventDefault();
 });
+
+$('#section').change(function()
+{
+    $('#niveau').empty();
+    changeNiveau();
+});
+
+setTimeout(function()
+{
+    $('.alert-container').fadeOut('slow');
+}
+, 4000);
