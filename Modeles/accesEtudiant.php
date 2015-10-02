@@ -33,22 +33,24 @@ function getInfosEtudiant($email, $connexion)
 }
 
 /**
- * 
- * @param type $email
- * @param type $telephone
- * @param type $adresse
- * @param type $ville
- * @param type $codePostal
- * @param type $dateNaissance
- * @param type $sexe
- * @param type $connexion
- * @return type
+ * Fonction qui permet la création d'un étudiant a partir des informations saisies en paramètres.
+ * @param string $email Email de l'etudiant
+ * @param string $telephone Numero de telephone portable de l'etudiant
+ * @param string $adresse Adresse de l'etudiant (Uniquement n° et rue)
+ * @param string $ville Nom de la ville de l'etudiant
+ * @param int $codePostal Code postal de l'etudiant
+ * @param string $dateNaissance Date de naissance de l'etudiant
+ * @param int $sexe Sexe de l'etudiant (0 : masculin, 1 : féminin)
+ * @param pdo $connexion Objet PDO où sont définies les paramètres de connexion à la base de données.
+ * @return boolean $reussite Retourne un booléen true si la requête a correctement été exécuté, si retourne false.
  */
 function createEtudiant($email, $telephone, $adresse, $ville, $codePostal, 
                         $dateNaissance, $sexe, $connexion)
 {
     $dateNaissance = dateFrancaisVersAnglais($dateNaissance);
-    $req = $connexion->prepare();
+    $req = $connexion->prepare('INSERT INTO etudiant'
+            . '(email, telephone, adresse, ville, codePostal, dateNaissance, sexe) '
+            . 'VALUES (:email,:telephone,:adresse,:ville,:codePostal,:dateNaissance,:sexe)');
     
     $req->bindValue(':email',$email);
     $req->bindValue(':telephone',$telephone);
