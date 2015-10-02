@@ -1,0 +1,7 @@
+identifiant: u70510835-easystage
+mdp: EasyStage
+hôte: sio2.malrauxbethune.fr
+port: aucun
+utilisateur: dbo577617087
+$dsn: mysql:host=db577617087.db.1and1.com
+$bdd: db577617087
