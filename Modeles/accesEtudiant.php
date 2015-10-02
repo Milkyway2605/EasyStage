@@ -8,7 +8,6 @@
  * @return pdo $resultat Objet PDO qui contient les informations de l'étudiant si il est définie et  
  * qui contient null si ce n'est pas le cas.
  */
-
 function getInfosEtudiant($email, $connexion)
 {
     $req = $connexion->prepare('SELECT telephone, adresse, codePostal, ville, dateNaissance, sexe '
