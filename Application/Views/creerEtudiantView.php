@@ -51,112 +51,14 @@ include_once '../Application/Base/layout_content_02.php';
                 </ul>
                 <div class="tab-content col-lg-7 col-md-7">
                     
-                    <div class="tab-pane fade active in" id="informationsCompte">
+                    <?php
 
-                        <legend>Informations du compte</legend>
-                        <div class="form-group">
-                            <label for="email">Adresse e-mail : </label>
-                            <input id="email" name="email" type="email" class="form-control"
-                            required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Mot de passe : </label>
-                            <input id="password" name="password" type="password" class="form-control" 
-                            required >
-                        </div>
-                        <div class="form-group">
-                            <label for="passwordConfirmation">Confirmation du mot de passe : </label>
-                            <input id="passwordConfirmation" name="passwordConfirmation" type="password" class="form-control" 
-                            required>
-                        </div>
+                        include_once '../Application/Modules/creerEtudiantModules/informationsCompteModule.php';
+                        include_once '../Application/Modules/creerEtudiantModules/informationsPersonnellesModule.php';
+                        include_once '../Application/Modules/creerEtudiantModules/coordonneesModule.php';
+                        include_once '../Application/Modules/creerEtudiantModules/choixClasseModule.php';
+                    ?>                 
 
-                    </div>
-                    
-                    <div class="tab-pane fade" id="informationsPersonnelles">
-
-                        <legend>Informations personnelles</legend>
-                        <div class="form-group">
-                            <label for="nom">Nom : </label>
-                            <input id="nom" name="nom" type="text" class="form-control">
-                        </div>
-                        <div class="form-group ">
-                            <label for="prenom">Prénom : </label>
-                            <input id="prenom" name="prenom" type="text" class="form-control">
-                        </div>
-                        <div class="form-group ">
-                            <label for="dateNaissance">Date de naissance : </label>
-                            <input type="text" id="dateNaissance" name="dateNaissance" class="form-control"
-                            data-provide="datepicker" readonly>
-                        </div>
-                        <div class="form-group ">                        
-                            <label>Sexe : </label>
-                            <fieldset>
-                                <div class="col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1
-                                col-sm-5 col-sm-offset-1">
-                                    <label for="masculin" class="radio-inline">
-                                        <input type="radio" name="sexe" value="masculin" id="masculin">
-                                        Masculin 
-                                    </label>
-                                </div>
-
-                                <div class="col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1
-                                col-sm-5 col-sm-offset-1">
-                                    <label for="feminin" class="radio-inline">
-                                        <input type="radio" name="sexe" value="feminin" id="feminin">
-                                        Féminin 
-                                    </label>
-                                </div>
-                            </fieldset>              
-                        </div>
-
-                    </div>
-                    
-                    <div class="tab-pane fade" id="coordonnees">
-
-                        <legend>Coordonnées</legend>
-                        <div class="form-group ">
-                            <label for="adresse">Adresse : </label>
-                            <input id="adresse" name="adresse" type="text" class="form-control" 
-                            placeholder="ex: 314 Rue Jules Massenet">
-                        </div>
-                        <div class="form-group ">
-                            <label for="ville">Ville : </label>
-                            <input id="ville" name="ville" type="text" class="form-control">
-                        </div>
-                        <div class="form-group ">
-                            <label for="codePostal">Code Postal : </label>
-                            <input id="codePostal" name="codePostal" type="text" class="form-control"
-                            data-mask='99999'>
-                        </div>
-                        <div class="form-group ">
-                            <label for="telephone">Téléphone portable : </label>
-                            <input id="telephone" name="telephone" type="tel" class="form-control"
-                            data-mask='99.99.99.99.99'>
-                        </div>
-
-                    </div>
-                    
-                    <div class="tab-pane fade" id="choixClasse">
-
-                        <legend>Choix d'une classe</legend>
-                        <div class="form-group">
-                        <label for="section">Section : </label>
-                        <select id="section" name="section" class="form-control">
-                            <option value="SIO">SIO</option>
-                            <option>MUC</option>
-                            <option>Etudiant</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="niveau">Niveau : </label>
-                        <select id="niveau" name="niveau" class="form-control">
-                            <option value="1">1ère année</option>
-                            <option value="2">2ème année</option>
-                        </select>
-                    </div>
-
-                    </div>
-                 
                 </div>
                 <div class='col-md-4 col-md-offset-5 col-xs-12'>
                     <div class='pull-left'>
