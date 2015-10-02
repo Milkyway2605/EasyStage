@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 02 Octobre 2015 à 13:59
+-- Généré le :  Ven 02 Octobre 2015 à 19:00
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -156,13 +156,13 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 --
 
 CREATE TABLE IF NOT EXISTS `etudiant` (
+  `email` varchar(50) NOT NULL,
   `telephone` varchar(14) NOT NULL,
   `adresse` varchar(50) NOT NULL,
   `ville` varchar(50) NOT NULL,
   `codePostal` int(11) NOT NULL,
   `dateNaissance` date NOT NULL,
   `sexe` tinyint(4) NOT NULL,
-  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -170,8 +170,9 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
 -- Contenu de la table `etudiant`
 --
 
-INSERT INTO `etudiant` (`telephone`, `adresse`, `ville`, `codePostal`, `dateNaissance`, `sexe`, `email`) VALUES
-('07.81.70.84.85', '21 rue Jean Jacques Rousseau', 'Sains-en-Gohelle', 62114, '1994-05-26', 0, 'guillaume.lespagnol26@gmail.com');
+INSERT INTO `etudiant` (`email`, `telephone`, `adresse`, `ville`, `codePostal`, `dateNaissance`, `sexe`) VALUES
+('guillaume.lespagnol26@gmail.com', '07.81.70.84.85', '21 rue Jean Jacques Rousseau', 'Sains-en-Gohelle', 62114, '1994-05-26', 0),
+('guillaume.lespagnol@yahoo.fr', '00.00.00.00.00', '21 rue Jean Jacques Rousseau', 'Sains-en-Gohelle', 0, '2015-10-13', 0);
 
 -- --------------------------------------------------------
 
@@ -188,14 +189,15 @@ CREATE TABLE IF NOT EXISTS `inscrit` (
   KEY `FK_Inscrit_codeClasse` (`codeClasse`),
   KEY `FK_Inscrit_email` (`email`),
   KEY `FK_Inscrit_dateDebut` (`dateDebut`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `inscrit`
 --
 
 INSERT INTO `inscrit` (`codeInscription`, `codeClasse`, `email`, `dateDebut`) VALUES
-(1, 2, 'guillaume.lespagnol26@gmail.com', 2015);
+(1, 2, 'guillaume.lespagnol26@gmail.com', 2015),
+(4, 1, 'guillaume.lespagnol@yahoo.fr', 2015);
 
 -- --------------------------------------------------------
 
@@ -223,15 +225,17 @@ CREATE TABLE IF NOT EXISTS `periode_stage` (
 CREATE TABLE IF NOT EXISTS `section` (
   `codeSection` int(11) NOT NULL AUTO_INCREMENT,
   `libelleSection` varchar(50) NOT NULL,
+  `nbNiveau` int(11) NOT NULL,
   PRIMARY KEY (`codeSection`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `section`
 --
 
-INSERT INTO `section` (`codeSection`, `libelleSection`) VALUES
-(1, 'SIO');
+INSERT INTO `section` (`codeSection`, `libelleSection`, `nbNiveau`) VALUES
+(1, 'SIO', 2),
+(2, 'COM', 2);
 
 -- --------------------------------------------------------
 
@@ -387,7 +391,6 @@ ALTER TABLE `etudiant`
 -- Contraintes pour la table `inscrit`
 --
 ALTER TABLE `inscrit`
-  ADD CONSTRAINT `FK_Inscrit_dateDebut` FOREIGN KEY (`dateDebut`) REFERENCES `annee_scolaire` (`dateDebut`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Inscrit_codeClasse` FOREIGN KEY (`codeClasse`) REFERENCES `classe` (`codeClasse`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Inscrit_email` FOREIGN KEY (`email`) REFERENCES `etudiant` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -395,7 +398,6 @@ ALTER TABLE `inscrit`
 -- Contraintes pour la table `periode_stage`
 --
 ALTER TABLE `periode_stage`
-  ADD CONSTRAINT `FK_Periode_stage_dateDebut` FOREIGN KEY (`dateDebut_Annee_scolaire`) REFERENCES `annee_scolaire` (`dateDebut`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Periode_stage_codeClasse` FOREIGN KEY (`codeClasse`) REFERENCES `classe` (`codeClasse`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -424,7 +426,7 @@ ALTER TABLE `tuteur`
 -- Contraintes pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  ADD CONSTRAINT `FK_Utilisateurs_codeTypeUtilisateurs` FOREIGN KEY (`typeUtilisateur`) REFERENCES `typeutilisateur` (`codeTypeUtilisateurs`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_typeutilisateur_codeTypeUtilisateurs` FOREIGN KEY (`typeUtilisateur`) REFERENCES `typeutilisateur` (`codeTypeUtilisateurs`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
