@@ -17,7 +17,7 @@ input[type="checkbox"]
     margin: 2px 0px 0px;
 }
 
-.form-control[disabled]
+.form-control[disabled], input[type="checkbox"][disabled]
 {
     cursor: context-menu;
 }
@@ -77,7 +77,7 @@ fieldset
     height: 100%;
 }
 
-#choixOrganisme
+#choixOrganisme, #choixSignataireExistant
 {
     margin-top: 20px;
 }
@@ -87,7 +87,9 @@ div.checkbox
     margin: 0;
 }
 
-#choixOrganismeContainer, #choixOrganismeContainer .panel-heading
+#choixOrganismeContainer, #choixOrganismeContainer .panel-heading,
+#choixSignataireContainer, #choixSignataireContainer .panel-heading,
+#choixTuteurContainer, #choixTuteurContainer .panel-heading
 {
     padding: 0;
     margin: 0;
@@ -95,4 +97,14 @@ div.checkbox
     border: none;
     box-shadow: none;
 }
-  
+
+fieldset.disabled
+{
+    background-color: #EEE;
+    opacity: 1;
+}
+
+#renseignementTuteur .form-group:first-of-type
+{
+    margin-bottom: 20px;
+}

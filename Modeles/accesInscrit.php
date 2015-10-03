@@ -14,3 +14,17 @@ function createInscrit($codeClasse,$email,$anneeScolaire, $connexion)
     
     return $reussite;
 }
+
+function getCodeClasse($email, $connexion)
+{
+    $req = $connexion->prepare('SELECT codeClasse '
+            . 'FROM inscrit '
+            . 'WHERE email = :email ');
+    
+    $req->bindValue(':email',$email);
+    
+    $req->execute();
+    $resultat = $req->fetch(PDO::FETCH_OBJ);
+    
+    return $resultat;
+}

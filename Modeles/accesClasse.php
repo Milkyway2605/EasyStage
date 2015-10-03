@@ -24,3 +24,26 @@ function getCodeClasse($codeSection, $niveau, $connexion)
     
     return $resultat;
 }
+
+function getCodeSection($codeClasse,$connexion)
+{
+   $req = $connexion->prepare('SELECT codeSection '
+            . 'FROM classe '
+            . 'WHERE codeClasse = :codeClasse ');
+    
+    $req->bindValue(':codeClasse',$codeClasse);
+    
+    $req->execute();
+    $ligne = $req->fetch(PDO::FETCH_OBJ);
+    
+    if($ligne == false)
+    {
+        $resultat = null;
+    }
+    else
+    {
+        $resultat = $ligne;                
+    }
+    
+    return $resultat; 
+}

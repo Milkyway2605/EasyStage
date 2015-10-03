@@ -2,6 +2,7 @@
 include_once '../Modeles/accesBDD.php';
 include_once '../Modeles/accesUtilisateurs.php';
 include_once '../Modeles/accesEtudiant.php';
+include_once '../Modeles/accesInscrit.php';
 
 if(isset($_POST['email']) == true)
 {
@@ -40,6 +41,8 @@ if(isset($_POST['email']) == true)
                 $_SESSION['ville'] = $etudiant->ville;
                 $_SESSION['dateNaissance'] = $etudiant->dateNaissance;
                 $_SESSION['sexe'] = $etudiant->sexe;
+                $_SESSION['codeClasse'] = (int)getCodeClasse($email, $connexion)->codeClasse;
+                        
                 break;
         }
         
