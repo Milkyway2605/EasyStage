@@ -3,7 +3,7 @@
 function getSection($connexion)
 {
     $req = $connexion->prepare('SELECT codeSection, libelleSection, nbNiveau '
-            . 'FROM SECTION');
+            . 'FROM section');
     $req->execute();
     $resultat = $req->fetchAll();
     

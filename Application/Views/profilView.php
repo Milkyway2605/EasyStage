@@ -23,18 +23,18 @@ include_once '../Application/Base/layout_content_02.php';
 switch($_SESSION['typeUtilisateur'])
 {
     case 'Administrateur':
-        include_once '../Application/Modules/ProfilModules/informationsGeneralesModule.php';
-//        include_once '../Application/Modules/ProfilModules/informationsComplementairesModule.php'; 
+        include_once '../Application/Modules/profilModules/informationsGeneralesModule.php';
+//        include_once '../Application/Modules/profilModules/informationsComplementairesModule.php'; 
         break;
     
     case 'Enseignant':
-        include_once '../Application/Modules/ProfilModules/informationsGeneralesModule.php';
-//        include_once '../Application/Modules/ProfilModules/informationsComplementairesModule.php'; 
+        include_once '../Application/Modules/profilModules/informationsGeneralesModule.php';
+//        include_once '../Application/Modules/profilModules/informationsComplementairesModule.php'; 
         break;
     
     case 'Etudiant':
-        include_once '../Application/Modules/ProfilModules/informationsGeneralesModule.php';
-        include_once '../Application/Modules/ProfilModules/informationsComplementairesModule.php'; 
+        include_once '../Application/Modules/profilModules/informationsGeneralesModule.php';
+        include_once '../Application/Modules/profilModules/informationsComplementairesModule.php'; 
         break;
 }
 

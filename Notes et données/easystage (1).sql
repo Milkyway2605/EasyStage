@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 02 Octobre 2015 à 19:00
+-- Généré le :  Dim 04 Octobre 2015 à 20:34
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -81,15 +81,41 @@ INSERT INTO `classe` (`codeClasse`, `niveau`, `codeSection`) VALUES
 CREATE TABLE IF NOT EXISTS `employes` (
   `codeEmploye` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
-  `telephone` int(11) NOT NULL,
+  `prenom` varchar(50) NOT NULL,
+  `telephone` varchar(14) NOT NULL,
   `email` varchar(50) NOT NULL,
   `fonction` varchar(50) NOT NULL,
-  `codeEntreprise` int(11) NOT NULL,
+  `codeOrganisme` int(11) NOT NULL,
   `typeEmploye` tinyint(4) NOT NULL,
   PRIMARY KEY (`codeEmploye`),
-  KEY `FK_Employes_codeEntreprise` (`codeEntreprise`),
+  KEY `FK_Employes_codeEntreprise` (`codeOrganisme`),
   KEY `FK_Employes_typeEmploye_idx` (`typeEmploye`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+
+--
+-- Contenu de la table `employes`
+--
+
+INSERT INTO `employes` (`codeEmploye`, `nom`, `prenom`, `telephone`, `email`, `fonction`, `codeOrganisme`, `typeEmploye`) VALUES
+(1, 'Quesque', 'Séverine', '06.60.48.52.15', 'severinequesque@gmail.com', 'Enseignante', 1, 1),
+(2, 'Marais', 'Bruno', '03.21.64.61.61', 'bruno.marais@ac-lille.fr', 'Chef des travaux', 1, 2),
+(3, 'Renaut', 'Jean-François', '00.00.00.00.00', 'jean.françois.renaut@ac-lille.fr', 'Enseignant', 1, 1),
+(4, 'Quesque', 'Séverine', '06.60.48.52.15', 'severinequesque@gmail.com', 'Enseignante', 1, 2),
+(5, 'Guillaume', 'Lespagnol', '03.21.29.24.12', 'guillaume.lespagnol@yahoo.fr', 'Aucune', 1, 1),
+(6, 'h', 'hhhhh', '00.00.00.00.00', 'severinequesque@gmail.com', 'h', 1, 1),
+(7, 'zrg', 'zefgz', '00.00.00.00.00', 'bruno.marais@ac-lille.fr', 'j', 1, 2),
+(8, 'dvs', 'sdv', '00.00.00.00.00', 'severinequesque@gmail.com', '0', 1, 1),
+(9, 'dhrtd', 'rhdhd', '00.00.00.00.00', 'severinequesque@gmail.com', 'k', 1, 1),
+(10, 'zege', 'zegzegz', '00.00.00.00.00', 'bruno.marais@ac-lille.fr', 'rtj', 1, 2),
+(15, 'v', 'c', '00.00.00.00.00', 'bruno.marais@ac-lille.fr', 'h', 1, 2),
+(16, 'v', 'c', '00.00.00.00.00', 'bruno.marais@ac-lille.fr', 'h', 1, 2),
+(17, 'h', 'hhhhh', '00.00.00.00.00', 'bruno.marais@ac-lille.fr', 'h', 1, 2),
+(18, 'sdsg', 'sdgs', '00.00.00.00.00', 'severinequesque@gmail.com', 'h', 1, 1),
+(19, 'dfhdf', 'dfhd', '00.00.00.00.00', 'erhher@gm.czefg', 'fj', 1, 2),
+(28, 'qsdgf', 'dsg', '00.00.00.00.00', 'severinequesque@gmail.com', 'Gérant', 6, 1),
+(29, 'qsdgf', 'dsg', '00.00.00.00.00', 'severinequesque@gmail.com', 'Gérant', 6, 2),
+(30, 'rtj', 'rtj', '00.00.00.00.00', 'severinequesque@gmail.com', '0', 7, 1),
+(31, 'hfgjn', 'gn', '00.00.00.00.00', 'bruno.marais@ac-lille.fr', '0', 7, 2);
 
 -- --------------------------------------------------------
 
@@ -117,7 +143,7 @@ INSERT INTO `enseignant` (`email`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `enseigne` (
-  `Est_referent` tinyint(1) NOT NULL,
+  `estReferent` tinyint(1) NOT NULL,
   `email` varchar(50) NOT NULL,
   `codeSection` int(11) NOT NULL,
   PRIMARY KEY (`email`,`codeSection`),
@@ -128,26 +154,9 @@ CREATE TABLE IF NOT EXISTS `enseigne` (
 -- Contenu de la table `enseigne`
 --
 
-INSERT INTO `enseigne` (`Est_referent`, `email`, `codeSection`) VALUES
+INSERT INTO `enseigne` (`estReferent`, `email`, `codeSection`) VALUES
 (1, 'jean.françois.renaut@ac-lille.fr', 1),
 (1, 'severinequesque@gmail.com', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `entreprise`
---
-
-CREATE TABLE IF NOT EXISTS `entreprise` (
-  `codeEntreprise` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL,
-  `adresse` varchar(50) NOT NULL,
-  `ville` varchar(50) NOT NULL,
-  `codePostal` int(11) NOT NULL,
-  `metierPrincipal` varchar(50) NOT NULL,
-  `telephone` varchar(14) NOT NULL,
-  PRIMARY KEY (`codeEntreprise`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -202,6 +211,36 @@ INSERT INTO `inscrit` (`codeInscription`, `codeClasse`, `email`, `dateDebut`) VA
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `organisme`
+--
+
+CREATE TABLE IF NOT EXISTS `organisme` (
+  `codeOrganisme` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
+  `adresse` varchar(50) NOT NULL,
+  `ville` varchar(50) NOT NULL,
+  `codePostal` int(11) NOT NULL,
+  `metierPrincipal` varchar(50) NOT NULL,
+  `telephone` varchar(14) NOT NULL,
+  PRIMARY KEY (`codeOrganisme`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Contenu de la table `organisme`
+--
+
+INSERT INTO `organisme` (`codeOrganisme`, `nom`, `adresse`, `ville`, `codePostal`, `metierPrincipal`, `telephone`) VALUES
+(1, 'Lycée André Malraux', '314 rue Jules Massenet', 'Béthune', 62400, 'Enseignement', '03.21.64.61.61'),
+(2, 'Waigéo', 'Village d''Entreprises, Rue des Dames', 'Ruitz', 62620, 'Service en ingénierie informatique', '03.91.80.18.18'),
+(3, 'Lycée André Malraux', '21 rue JJ Rousseau', 'Sains-en-Gohelle', 62114, 'Aucun', '00.00.00.00.00'),
+(4, 'h', 'h', '0', 0, 'hefdhh', '00.00.00.00.00'),
+(5, 'h', 'h', '0', 0, 'hefdhh', '00.00.00.00.00'),
+(6, 'h', 'h', '0', 0, 'hefdhh', '00.00.00.00.00'),
+(7, 'h', 'erh', 'eryh', 0, 'hje', '00.00.00.00.00');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `periode_stage`
 --
 
@@ -210,11 +249,18 @@ CREATE TABLE IF NOT EXISTS `periode_stage` (
   `dateDebut` date NOT NULL,
   `dateFin` date NOT NULL,
   `codeClasse` int(11) NOT NULL,
-  `dateDebut_Annee_scolaire` year(4) NOT NULL,
+  `anneeScolaire` year(4) NOT NULL,
   PRIMARY KEY (`codePeriode`),
   KEY `FK_Periode_stage_codeClasse` (`codeClasse`),
-  KEY `FK_Periode_stage_dateDebut_Annee_scolaire` (`dateDebut_Annee_scolaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `FK_Periode_stage_dateDebut_Annee_scolaire` (`anneeScolaire`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `periode_stage`
+--
+
+INSERT INTO `periode_stage` (`codePeriode`, `dateDebut`, `dateFin`, `codeClasse`, `anneeScolaire`) VALUES
+(1, '2016-01-11', '2016-03-04', 2, 2015);
 
 -- --------------------------------------------------------
 
@@ -248,6 +294,19 @@ CREATE TABLE IF NOT EXISTS `signataire` (
   PRIMARY KEY (`codeSignataire`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `signataire`
+--
+
+INSERT INTO `signataire` (`codeSignataire`) VALUES
+(1),
+(3),
+(8),
+(9),
+(18),
+(28),
+(30);
+
 -- --------------------------------------------------------
 
 --
@@ -256,23 +315,41 @@ CREATE TABLE IF NOT EXISTS `signataire` (
 
 CREATE TABLE IF NOT EXISTS `stage` (
   `codeStage` int(11) NOT NULL AUTO_INCREMENT,
-  `conventionImprimee` tinyint(1) NOT NULL,
-  `conventionRetournee` tinyint(1) NOT NULL,
+  `conventionImprimee` tinyint(1) NOT NULL DEFAULT '0',
+  `conventionRetournee` tinyint(1) NOT NULL DEFAULT '0',
   `codeTuteur` int(11) NOT NULL,
   `codeSignataire` int(11) NOT NULL,
   `codeInscription` int(11) NOT NULL,
-  `codeEntreprise` int(11) NOT NULL,
+  `codeOrganisme` int(11) NOT NULL,
   `codePeriode` int(11) NOT NULL,
   `libelle` varchar(45) NOT NULL,
   `descriptif` longtext NOT NULL,
-  `statut` tinyint(1) DEFAULT '1',
+  `statut` tinyint(1) NOT NULL DEFAULT '-1',
+  `enseignantReferent` varchar(50) NOT NULL,
   PRIMARY KEY (`codeStage`),
   KEY `FK_Stage_codeInscription` (`codeInscription`),
-  KEY `fk_stage_entreprise1_idx` (`codeEntreprise`),
+  KEY `fk_stage_entreprise1_idx` (`codeOrganisme`),
   KEY `fk_stage_periode_stage1_idx` (`codePeriode`),
   KEY `FK_Stage_codeTuteur_idx` (`codeTuteur`),
-  KEY `FK_Stage_codeSignataire_idx` (`codeSignataire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `FK_Stage_codeSignataire_idx` (`codeSignataire`),
+  KEY `fk_stage_enseignant1_idx` (`enseignantReferent`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+
+--
+-- Contenu de la table `stage`
+--
+
+INSERT INTO `stage` (`codeStage`, `conventionImprimee`, `conventionRetournee`, `codeTuteur`, `codeSignataire`, `codeInscription`, `codeOrganisme`, `codePeriode`, `libelle`, `descriptif`, `statut`, `enseignantReferent`) VALUES
+(2, 0, 0, 1, 1, 1, 1, 1, 'h', 'h', -1, 'jean.françois.renaut@ac-lille.fr'),
+(3, 0, 0, 2, 1, 1, 1, 1, 'h', 'h', -1, 'jean.françois.renaut@ac-lille.fr'),
+(5, 0, 0, 2, 1, 1, 1, 1, '1', '1', -1, 'jean.françois.renaut@ac-lille.fr'),
+(6, 0, 0, 1, 1, 1, 1, 1, 'h', 'h', -1, 'jean.françois.renaut@ac-lille.fr'),
+(13, 0, 0, 1, 1, 1, 1, 1, 'hy', 'h', -1, 'jean.françois.renaut@ac-lille.fr'),
+(15, 0, 0, 2, 8, 1, 1, 1, 'h', 'h', -1, 'jean.françois.renaut@ac-lille.fr'),
+(21, 0, 0, 17, 1, 1, 1, 1, 'h', 'h', -1, 'jean.françois.renaut@ac-lille.fr'),
+(22, 0, 0, 19, 18, 1, 1, 1, 'h', 'h', -1, 'jean.françois.renaut@ac-lille.fr'),
+(27, 0, 0, 29, 28, 1, 6, 1, 'gn', 'gn', -1, 'jean.françois.renaut@ac-lille.fr'),
+(28, 0, 0, 31, 30, 1, 7, 1, 'h', 'h', -1, 'jean.françois.renaut@ac-lille.fr');
 
 -- --------------------------------------------------------
 
@@ -285,6 +362,19 @@ CREATE TABLE IF NOT EXISTS `tuteur` (
   PRIMARY KEY (`codeTuteur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `tuteur`
+--
+
+INSERT INTO `tuteur` (`codeTuteur`) VALUES
+(1),
+(2),
+(4),
+(17),
+(19),
+(29),
+(31);
+
 -- --------------------------------------------------------
 
 --
@@ -296,6 +386,14 @@ CREATE TABLE IF NOT EXISTS `typeemploye` (
   `libelle` varchar(45) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`codeTypeEmploye`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Contenu de la table `typeemploye`
+--
+
+INSERT INTO `typeemploye` (`codeTypeEmploye`, `libelle`) VALUES
+(1, 'Signataire'),
+(2, 'Tuteur');
 
 -- --------------------------------------------------------
 
@@ -365,7 +463,7 @@ ALTER TABLE `classe`
 -- Contraintes pour la table `employes`
 --
 ALTER TABLE `employes`
-  ADD CONSTRAINT `FK_Employes_codeEntreprise` FOREIGN KEY (`codeEntreprise`) REFERENCES `entreprise` (`codeEntreprise`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_Employes_codeEntreprise` FOREIGN KEY (`codeOrganisme`) REFERENCES `organisme` (`codeOrganisme`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Employes_typeEmploye` FOREIGN KEY (`typeEmploye`) REFERENCES `typeemploye` (`codeTypeEmploye`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -392,13 +490,15 @@ ALTER TABLE `etudiant`
 --
 ALTER TABLE `inscrit`
   ADD CONSTRAINT `FK_Inscrit_codeClasse` FOREIGN KEY (`codeClasse`) REFERENCES `classe` (`codeClasse`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_Inscrit_dateDebut` FOREIGN KEY (`dateDebut`) REFERENCES `annee_scolaire` (`dateDebut`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Inscrit_email` FOREIGN KEY (`email`) REFERENCES `etudiant` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `periode_stage`
 --
 ALTER TABLE `periode_stage`
-  ADD CONSTRAINT `FK_Periode_stage_codeClasse` FOREIGN KEY (`codeClasse`) REFERENCES `classe` (`codeClasse`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_Periode_stage_codeClasse` FOREIGN KEY (`codeClasse`) REFERENCES `classe` (`codeClasse`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_Periode_stage_dateDebut` FOREIGN KEY (`anneeScolaire`) REFERENCES `annee_scolaire` (`dateDebut`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `signataire`
@@ -410,10 +510,11 @@ ALTER TABLE `signataire`
 -- Contraintes pour la table `stage`
 --
 ALTER TABLE `stage`
-  ADD CONSTRAINT `fk_stage_codeEntreprise` FOREIGN KEY (`codeEntreprise`) REFERENCES `entreprise` (`codeEntreprise`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_stage_codeEntreprise` FOREIGN KEY (`codeOrganisme`) REFERENCES `organisme` (`codeOrganisme`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_Stage_codeInscription` FOREIGN KEY (`codeInscription`) REFERENCES `inscrit` (`codeInscription`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Stage_codeSignataire` FOREIGN KEY (`codeSignataire`) REFERENCES `signataire` (`codeSignataire`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Stage_codeTuteur` FOREIGN KEY (`codeTuteur`) REFERENCES `tuteur` (`codeTuteur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_stage_enseignantReferent` FOREIGN KEY (`enseignantReferent`) REFERENCES `enseignant` (`email`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_stage_periode_stage1` FOREIGN KEY (`codePeriode`) REFERENCES `periode_stage` (`codePeriode`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

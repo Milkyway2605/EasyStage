@@ -16,6 +16,7 @@ include_once '../Modeles/accesInscrit.php';
 
 backConnexion();
 $connexion = getConnexion();
+$lesSection = getSection($connexion);
 
 if(isset($_POST['telephone']))
 {

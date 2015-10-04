@@ -22,3 +22,18 @@ function createStage($codeTuteur,$codeSignataire,$codeInscription,$codeOrganisme
     return $reussite;
 }
 
+function getLesStages($codeInscription,$connexion)
+{
+    $req = $connexion->prepare('SELECT codeStage, codeTuteur, codeSignataire, '
+            . 'codeOrganisme, codePeriode, libelle, descriptif, statut, enseignantReferent '
+            . 'FROM stage '
+            . 'WHERE codeInscription = 1');
+    
+    $req->bindValue(':codeInscription',$codeInscription);
+    
+    $req->execute();
+    $resultat = $req->fetchAll();
+    
+    return $resultat;
+}
+

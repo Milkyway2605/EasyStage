@@ -6,7 +6,6 @@
                         <select id="section" name="section" class="form-control">
                             <?php
                             
-                                $lesSection = getSection($connexion);
                                 foreach($lesSection as $uneSection)
                                 {
                                     echo('<option data-nbNiveau="'.$uneSection['nbNiveau']
