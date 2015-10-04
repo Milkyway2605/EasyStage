@@ -2,7 +2,7 @@
 
 function createTuteur($codeTuteur,$connexion)
 {
-    $req = $connexion->prepare('INSERT INTO signataire '
+    $req = $connexion->prepare('INSERT INTO tuteur '
             . '(codeTuteur) '
             . 'VALUES(:codeTuteur)');
     

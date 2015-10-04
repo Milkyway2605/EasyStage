@@ -36,6 +36,15 @@ $('#btnNext').click(function(e)
             .not('input[type="checkbox"]').attr('required','true');
         }
         
+        if(tabPage === 2)
+        {
+            if($("#organismeExistant").is(':checked') === false)
+            {
+                $('#renseignementSignataire .form-group:first-of-type').hide();
+                $('#renseignementTuteur .form-group:nth-child(3)').hide();
+            }
+        }
+        
         if(tabPage ===3)
         {
             if($("#tuteurIdentique").is(':checked'))
@@ -216,6 +225,12 @@ $('#choixTuteurExistant').change(function()
 {
     donneValeurTuteur();
 });
+
+setTimeout(function()
+{
+    $('.alert-container').fadeOut('slow');
+}
+, 4000);
 
 
 //FONCTIONS

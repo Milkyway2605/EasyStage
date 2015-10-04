@@ -37,11 +37,11 @@ function createEmploye($nom,$prenom,$telephone,$email,$fonction,$codeOrganisme,$
     $req->bindValue(':telephone',$telephone);
     $req->bindValue(':email',$email);
     $req->bindValue(':fonction',$fonction);
-    $req->bindValue(':codeEntreprise',$codeOrganisme);
+    $req->bindValue(':codeOrganisme',$codeOrganisme);
     $req->bindValue(':typeEmploye',$typeEmploye);
     
     $req->execute();
-    $resultat = $req->lastInsertId();
+    $resultat = $connexion->lastInsertId();
     
     return $resultat;
 }

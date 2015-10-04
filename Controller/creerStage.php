@@ -28,6 +28,7 @@ $codeSection = (int)getCodeSection($codeClasse, $connexion)->codeSection;
 $lesEnseignantsReferents = getInfoEnseignantReferent($codeSection, $connexion);
 $lesSignataires = getLesSignataires($connexion);
 $lesTuteurs = getLesTuteurs($connexion);
+$codeOrganisme;
 
 if(isset($_POST['fonctionTuteur']))
 {
@@ -66,7 +67,7 @@ if(isset($_POST['fonctionTuteur']))
         $telephoneSignataire = $_POST['telephoneSignataire'];
         $emailSignataire = $_POST['emailSignataire'];
         $fonctionSignataire = $_POST['fonctionSignataire'];
-        $codeSignataire = createEmploye($nomSignataire, $prenomSignataire, $telephoneSignataire, 
+        $codeSignataire = (int)createEmploye($nomSignataire, $prenomSignataire, $telephoneSignataire, 
                                         $emailSignataire, $fonctionSignataire, $codeOrganisme, 1, $connexion);
         createSignataire($codeSignataire, $connexion);
     }
@@ -80,12 +81,12 @@ if(isset($_POST['fonctionTuteur']))
         }
         else
         {
-            $nomTuteur = $nomSignataire;
-            $prenomTuteur = $prenomSignataire;
-            $telephoneTuteur = $telephoneSignataire;
-            $emailTuteur = $emailSignataire;
-            $fonctionTuteur = $fonctionSignataire;
-            $codeTuteur = createEmploye($nomTuteur, $prenomTuteur, $telephoneTuteur, 
+            $nomTuteur = $_POST['nomSignataire'];
+            $prenomTuteur = $_POST['prenomSignataire'];
+            $telephoneTuteur = $_POST['telephoneSignataire'];
+            $emailTuteur = $_POST['emailSignataire'];
+            $fonctionTuteur = $_POST['fonctionSignataire'];
+            $codeTuteur = (int)createEmploye($nomTuteur, $prenomTuteur, $telephoneTuteur, 
                                         $emailTuteur, $fonctionTuteur, $codeOrganisme, 2, $connexion);
             createTuteur($codeTuteur, $connexion);
         }
@@ -95,6 +96,7 @@ if(isset($_POST['fonctionTuteur']))
         if(isset($_POST['tuteurExistant']))
         {
             $codeTuteur = (int)$_POST['choixTuteurExistant'];
+            createTuteur($codeTuteur, $connexion);
         }
         else
         {
@@ -103,16 +105,16 @@ if(isset($_POST['fonctionTuteur']))
             $telephoneTuteur = $_POST['telephoneTuteur'];
             $emailTuteur = $_POST['emailTuteur'];
             $fonctionTuteur = $_POST['fonctionTuteur'];
-            $codeTuteur = createEmploye($nomTuteur, $prenomTuteur, $telephoneTuteur, 
-                                    $emailTuteur, $fonctionTuteur, $codeOrganisme, 2, $connexion);
+            $codeTuteur = (int)createEmploye($nomTuteur, $prenomTuteur, $telephoneTuteur,
+                                        $emailTuteur, $fonctionTuteur, $codeOrganisme, 2, $connexion);
             createTuteur($codeTuteur, $connexion);
         }
     }
     
     $emailProfesseurReferent = $_POST['selectionEnseignant'];
     $codeInscription = (int)getCodeInscrit($_SESSION['email'], $codeClasse, $anneeScolaire, $connexion)->codeInscription;
-    createStage($codeTuteur, $codeSignataire, $codeInscription, $codeOrganisme, 
-                $codePeriode, $libelleStage, $descriptifStage, $emailProfesseurReferent, $connexion);
+    $succes = createStage($codeTuteur, $codeSignataire, $codeInscription, $codeOrganisme, 
+                          $codePeriode, $libelleStage, $descriptifStage, $emailProfesseurReferent, $connexion);
 }
 
 include_once '../Application/Views/creerStageView.php';

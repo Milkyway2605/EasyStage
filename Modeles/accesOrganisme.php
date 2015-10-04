@@ -40,7 +40,8 @@ function createOrganisme($nom, $adresse, $ville, $codePostal, $metierPrincipal,
     $req->bindValue(':metierPrincipal',$metierPrincipal);
     $req->bindValue(':telephone',$telephone);
     
-    $resultat = $req->lastInsertId();
+    $reussite = $req->execute();
+    $resultat = $connexion->lastInsertId();
     
     return $resultat;
 }
