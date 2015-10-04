@@ -15,7 +15,7 @@
 
                 <div class="panel-collapse collapse" id="containerChoixOrganismeExistant">
                     <div class="panel-body">
-                        <select id="choixOrganismeExistant" class="form-control">
+                        <select id="choixOrganismeExistant" name="choixOrganismeExistant" class="form-control">
                             <?php
 
                                 foreach ($lesOrganismes as $unOrganisme)

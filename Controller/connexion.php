@@ -41,7 +41,7 @@ if(isset($_POST['email']) == true)
                 $_SESSION['ville'] = $etudiant->ville;
                 $_SESSION['dateNaissance'] = $etudiant->dateNaissance;
                 $_SESSION['sexe'] = $etudiant->sexe;
-                $_SESSION['codeClasse'] = (int)getCodeClasse($email, $connexion)->codeClasse;
+                $_SESSION['codeClasse'] = (int)getCodeClasseInscrit($email, $connexion)->codeClasse;
                         
                 break;
         }

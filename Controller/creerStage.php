@@ -13,6 +13,11 @@ include_once '../Modeles/accesOrganisme.php';
 include_once '../Modeles/accesClasse.php';
 include_once '../Modeles/accesEnseigne.php';
 include_once '../Modeles/accesEmployes.php';
+include_once '../Modeles/accesOrganisme.php';
+include_once '../Modeles/accesSignataire.php';
+include_once '../Modeles/accesTuteur.php';
+include_once '../Modeles/accesInscrit.php';
+include_once '../Modeles/accesStage.php';
 
 backConnexion();
 $connexion = getConnexion();
@@ -26,48 +31,88 @@ $lesTuteurs = getLesTuteurs($connexion);
 
 if(isset($_POST['fonctionTuteur']))
 {
+    //Etape 1
     $libelleStage = $_POST['libelleStage'];
     $descriptifStage = $_POST['descriptifStage'];
-    $periodeStage = $_POST['periodeStage'];
+    $codePeriode = (int)$_POST['periodeStage'];
     
+    //Etape 2
     if(isset($_POST['organismeExistant']))
     {
         $codeOrganisme = (int)$_POST['choixOrganismeExistant'];    
     }
     else
     {
-        $codeOrganisme = $_POST['codeOrganisme'];
+        $nomOrganisme = $_POST['nomOrganisme'];
         $metierPrincipal = $_POST['metierPrincipal'];
         $adresseOrganisme = $_POST['adresseOrganisme'];
         $villeOrganisme = $_POST['villeOrganisme'];
-        $codePostalOrganisme = $_POST['codePostalOrganisme'];
+        $codePostalOrganisme = (int)$_POST['codePostalOrganisme'];
         $telephoneOrganisme = $_POST['telephoneOrganisme'];
+        $codeOrganisme = (int)createOrganisme($nomOrganisme, $adresseOrganisme, 
+                                              $villeOrganisme, $codePostalOrganisme, 
+                                              $metierPrincipal, $telephoneOrganisme, $connexion);
     }
     
-    $nomSignataire = $_POST['nomSignataire'];
-    $prenomSignataire = $_POST['prenomSignataire'];
-    $telephoneSignataire = $_POST['telephoneSignataire'];
-    $emailSignataire = $_POST['emailSignataire'];
-    $fonctionSignataire = $_POST['fonctionSignataire'];
-    
-    if(isset($_POST['tuteurIdentique']))
+    //Etape 3
+    if(isset($_POST['signataireExistant']))
     {
-        $nomTuteur = $nomSignataire;
-        $prenomTuteur = $prenomSignataire;
-        $telephoneTuteur = $telephoneSignataire;
-        $emailTuteur = $emailSignataire;
-        $fonctionTuteur = $fonctionSignataire;
+        $codeSignataire = (int)$_POST['choixSignataireExistant'];
     }
     else
     {
-        $nomTuteur = $_POST['nomTuteur'];
-        $prenomTuteur = $_POST['prenomTuteur'];
-        $telephoneTuteur = $_POST['telephoneTuteur'];
-        $emailTuteur = $_POST['emailTuteur'];
-        $fonctionTuteur = $_POST['fonctionTuteur'];
+        $nomSignataire = $_POST['nomSignataire'];
+        $prenomSignataire = $_POST['prenomSignataire'];
+        $telephoneSignataire = $_POST['telephoneSignataire'];
+        $emailSignataire = $_POST['emailSignataire'];
+        $fonctionSignataire = $_POST['fonctionSignataire'];
+        $codeSignataire = createEmploye($nomSignataire, $prenomSignataire, $telephoneSignataire, 
+                                        $emailSignataire, $fonctionSignataire, $codeOrganisme, 1, $connexion);
+        createSignataire($codeSignataire, $connexion);
+    }
+    
+    //Etape 4
+    if(isset($_POST['tuteurIdentique']))
+    {
+        if(isset($_POST['signataireExistant']))
+        {
+            $codeTuteur = (int)$_POST['choixSignataireExistant'];
+        }
+        else
+        {
+            $nomTuteur = $nomSignataire;
+            $prenomTuteur = $prenomSignataire;
+            $telephoneTuteur = $telephoneSignataire;
+            $emailTuteur = $emailSignataire;
+            $fonctionTuteur = $fonctionSignataire;
+            $codeTuteur = createEmploye($nomTuteur, $prenomTuteur, $telephoneTuteur, 
+                                        $emailTuteur, $fonctionTuteur, $codeOrganisme, 2, $connexion);
+            createTuteur($codeTuteur, $connexion);
+        }
+    }
+    else
+    {
+        if(isset($_POST['tuteurExistant']))
+        {
+            $codeTuteur = (int)$_POST['choixTuteurExistant'];
+        }
+        else
+        {
+            $nomTuteur = $_POST['nomTuteur'];
+            $prenomTuteur = $_POST['prenomTuteur'];
+            $telephoneTuteur = $_POST['telephoneTuteur'];
+            $emailTuteur = $_POST['emailTuteur'];
+            $fonctionTuteur = $_POST['fonctionTuteur'];
+            $codeTuteur = createEmploye($nomTuteur, $prenomTuteur, $telephoneTuteur, 
+                                    $emailTuteur, $fonctionTuteur, $codeOrganisme, 2, $connexion);
+            createTuteur($codeTuteur, $connexion);
+        }
     }
     
     $emailProfesseurReferent = $_POST['selectionEnseignant'];
+    $codeInscription = (int)getCodeInscrit($_SESSION['email'], $codeClasse, $anneeScolaire, $connexion)->codeInscription;
+    createStage($codeTuteur, $codeSignataire, $codeInscription, $codeOrganisme, 
+                $codePeriode, $libelleStage, $descriptifStage, $emailProfesseurReferent, $connexion);
 }
 
 include_once '../Application/Views/creerStageView.php';

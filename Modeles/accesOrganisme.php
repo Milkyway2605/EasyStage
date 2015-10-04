@@ -25,3 +25,22 @@ function getInfoOrganisme($codeOrganisme, $connexion)
     
     return $resultat;
 }
+
+function createOrganisme($nom, $adresse, $ville, $codePostal, $metierPrincipal,
+                         $telephone, $connexion)
+{
+    $req = $connexion->prepare('INSERT INTO organisme '
+            . '(nom,adresse,ville,codePostal,metierPrincipal,telephone) '
+            . 'VALUES (:nom,:adresse,:ville,:codePostal,:metierPrincipal,:telephone)');
+    
+    $req->bindValue(':nom',$nom);
+    $req->bindValue(':adresse',$adresse);
+    $req->bindValue(':ville',$ville);
+    $req->bindValue(':codePostal',$codePostal);
+    $req->bindValue(':metierPrincipal',$metierPrincipal);
+    $req->bindValue(':telephone',$telephone);
+    
+    $resultat = $req->lastInsertId();
+    
+    return $resultat;
+}

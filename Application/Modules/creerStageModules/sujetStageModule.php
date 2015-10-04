@@ -15,7 +15,7 @@
                         </div>
                         <div class="form-group">
                             <label for="periodeStage">Période : </label>
-                            <select id="periodeStage" class="form-control" required>
+                            <select id="periodeStage" name="periodeStage" class="form-control" required>
                                 <?php
                                 
                                     $lesPeriodes = getLesPeriodes($codeClasse, $anneeScolaire, $connexion);

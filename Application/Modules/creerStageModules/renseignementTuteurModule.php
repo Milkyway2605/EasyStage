@@ -23,7 +23,7 @@
 
                                     <div class="panel-collapse collapse" id="containerChoixTuteurExistant">
                                         <div class="panel-body">
-                                            <select id="choixTuteurExistant" class="form-control">
+                                            <select id="choixTuteurExistant" name="choixTuteurExistant" class="form-control">
                                                 <?php
                                                 
                                                     foreach ($lesTuteurs as $unTuteur)
@@ -34,7 +34,7 @@
                                                                 . 'data-telephone="'.$unTuteur['telephone'].'" '
                                                                 . 'data-email="'.$unTuteur['email'].'" '
                                                                 . 'data-fonction="'.$unTuteur['fonction'].'" '
-                                                                . 'data-codeEntreprise="'.$unTuteur['codeEntreprise'].'">'
+                                                                . 'data-codeEntreprise="'.$unTuteur['codeOrganisme'].'">'
                                                                 .$unTuteur['nom'].' '
                                                                 .$unTuteur['prenom'].'</option>');
                                                     }
@@ -64,7 +64,7 @@
                         <div class="form-group">
                             <label for="emailTuteur">E-mail : </label>
                             <input id="emailTuteur" name='emailTuteur' 
-                            type="text" class="form-control">
+                            type="email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="fonctionTuteur">Fonction : </label>

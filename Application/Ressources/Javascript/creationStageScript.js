@@ -35,6 +35,14 @@ $('#btnNext').click(function(e)
             $('.tab-pane').eq(tabPage).children().children('input')
             .not('input[type="checkbox"]').attr('required','true');
         }
+        
+        if(tabPage ===3)
+        {
+            if($("#tuteurIdentique").is(':checked'))
+            {
+                donneMemeValeurTuteurQueSignataire();
+            } 
+        }
 
         if(tabPage === 4)
         {
@@ -85,17 +93,16 @@ $('a.step').click(function(e)
 $("#tuteurIdentique").change(function() {
     if(this.checked) 
     {
-        disabledInputNotCheckbox();
+        disabledInputAndRequiredNotCheckbox(tabPage);
         donneMemeValeurTuteurQueSignataire();        
         $('#tuteurExistant').parents('fieldset').addClass('disabled');
         $('#tuteurExistant').attr('disabled','true');
     }
     else
     {
-        enabledInputNotCheckbox();
+        enabledInputAndRequiredNotCheckbox(tabPage);
         initInputTuteur();        
-        $('#tuteurExistant').parents('fieldset').removeClass('disabled');
-        $('#tuteurExistant').removeAttr('disabled');
+        enabledTuteurExistant();
     }
 });
 
@@ -103,8 +110,15 @@ $("#organismeExistant").change(function() {
     if(this.checked) 
     {
         $('#containerChoixOrganismeExistant').collapse('toggle');        
-        disabledInputNotCheckbox();
+        disabledInputAndRequiredNotCheckbox(tabPage);
         $('#renseignementSignataire .form-group:first-of-type').show();
+        
+        $('#signataireExistant').removeAttr('checked');
+        $('#containerChoixSignataireExistant').collapse('hide');
+        
+        $('#tuteurExistant').removeAttr('checked');
+        $('#containerChoixTuteurExistant').collapse('hide');
+        
         donneValeurOrganisme();
         cacheOptionSignataireCodeEntrepriseDifferent();        
         cacheOptionTuteurCodeEntrepriseDifferent();        
@@ -114,12 +128,16 @@ $("#organismeExistant").change(function() {
     else
     {
         $('#containerChoixOrganismeExistant').collapse('toggle');        
-        enabledInputNotCheckbox();
+        enabledInputAndRequiredNotCheckbox(tabPage);
+        enabledInputNotCheckbox(2);
+        enabledInputNotCheckbox(3);
         $('#renseignementSignataire .form-group:first-of-type').hide();
         $('#renseignementTuteur .form-group:nth-child(3)').hide();
         initInputOrganisme();
         initInputSignataire();
         initInputTuteur();
+        enabledTuteurIdentique();
+        $('#tuteurIdentique').removeAttr('checked');
     }
 });
 
@@ -140,20 +158,32 @@ $('#choixOrganismeExistant').change(function()
     cacheOptionTuteurCodeEntrepriseDifferent();    
     signataireCodeEntrepriseDifferent();    
     tuteurCodeEntrepriseDifferent();
+    initPageSignataire();
+    initPageTuteur();
 });
 
 $("#signataireExistant").change(function() {
     if(this.checked) 
     {
         $('#containerChoixSignataireExistant').collapse('toggle');        
-        disabledInputNotCheckbox();
-        donneValeurSignataire();      
+        disabledInputAndRequiredNotCheckbox(tabPage);
+        donneValeurSignataire();
+        
+        if($("#tuteurExistant").is(':checked') === false)
+        {
+            initPageTuteur();
+        }        
     }
     else
     {
         $('#containerChoixSignataireExistant').collapse('toggle');        
-        enabledInputNotCheckbox();
+        enabledInputAndRequiredNotCheckbox(tabPage);
         initInputSignataire();
+        
+        if($("#tuteurExistant").is(':checked') === false)
+        {
+            initPageTuteur();
+        }
     }
 });
 
@@ -161,7 +191,7 @@ $("#tuteurExistant").change(function() {
     if(this.checked) 
     {
         $('#containerChoixTuteurExistant').collapse('toggle');        
-        disabledInputNotCheckbox();
+        disabledInputAndRequiredNotCheckbox(tabPage);
         $('#tuteurIdentique').parents('fieldset').addClass('disabled');
         $('#tuteurIdentique').attr('disabled','true');        
         donneValeurTuteur();
@@ -170,36 +200,66 @@ $("#tuteurExistant").change(function() {
     else
     {
         $('#containerChoixTuteurExistant').collapse('toggle');        
-        enabledInputNotCheckbox();        
+        enabledInputAndRequiredNotCheckbox(tabPage);        
         initInputTuteur();        
         $('#tuteurIdentique').parents('fieldset').removeClass('disabled');
         $('#tuteurIdentique').removeAttr('disabled');
     }
 });
 
+$('#choixSignataireExistant').change(function()
+{
+    donneValeurSignataire();
+});
 
-
-
+$('#choixTuteurExistant').change(function()
+{
+    donneValeurTuteur();
+});
 
 
 //FONCTIONS
 
-function disabledInputNotCheckbox()
+function enabledInputNotCheckbox(index)
 {
-    $('.tab-pane').eq(tabPage).children().children('input')
-    .not('input[type="checkbox"]').removeAttr('required');
-
-    $('.tab-pane').eq(tabPage).children().children('input')
-    .not('input[type="checkbox"]').attr('disabled','true');
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').removeClass('disabled');
+    
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').removeProp('readonly');
 }
 
-function enabledInputNotCheckbox()
+function disabledInputNotCheckbox(index)
 {
-    $('.tab-pane').eq(tabPage).children().children('input')
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').addClass('disabled');
+    
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').prop('readonly', true);
+}
+
+function disabledInputAndRequiredNotCheckbox(index)
+{
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').removeAttr('required');
+
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').addClass('disabled');
+    
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').prop('readonly', true);
+}
+
+function enabledInputAndRequiredNotCheckbox(index)
+{
+    $('.tab-pane').eq(index).children().children('input')
     .not('input[type="checkbox"]').attr('required','true');
 
-    $('.tab-pane').eq(tabPage).children().children('input')
-    .not('input[type="checkbox"]').removeAttr('disabled');
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').removeClass('disabled');
+    
+    $('.tab-pane').eq(index).children().children('input')
+    .not('input[type="checkbox"]').removeProp('readonly');
 }
 
 function initInputSignataire()
@@ -306,4 +366,36 @@ function cacheOptionTuteurCodeEntrepriseDifferent()
     {
         $(this).hide();
     });
+}
+
+function initPageTuteur()
+{
+    $("#tuteurIdentique").removeAttr('checked');
+    enabledInputNotCheckbox(3);
+    initInputTuteur();
+    enabledTuteurIdentique();
+    enabledTuteurExistant();
+    $('#tuteurExistant').removeAttr('checked');
+    $('#containerChoixTuteurExistant').collapse('hide');
+}
+
+function initPageSignataire()
+{
+    enabledInputNotCheckbox(2);
+    initInputSignataire();
+    $('#signataireExistant').removeAttr('checked');
+    $('#containerChoixSignataireExistant').collapse('hide');
+    
+}
+
+function enabledTuteurIdentique()
+{
+    $('#tuteurIdentique').parents('fieldset').removeClass('disabled');
+    $('#tuteurIdentique').removeAttr('disabled');
+}
+
+function enabledTuteurExistant()
+{
+    $('#tuteurExistant').parents('fieldset').removeClass('disabled');
+    $('#tuteurExistant').removeAttr('disabled');
 }

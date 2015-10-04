@@ -15,7 +15,7 @@
 
                                     <div class="panel-collapse collapse" id="containerChoixSignataireExistant">
                                         <div class="panel-body">
-                                            <select id="choixSignataireExistant" class="form-control">
+                                            <select id="choixSignataireExistant" class="form-control" name="choixSignataireExistant">
                                                 <?php
                                                 
                                                     foreach ($lesSignataires as $unSignataire)
@@ -26,7 +26,7 @@
                                                                 . 'data-telephone="'.$unSignataire['telephone'].'" '
                                                                 . 'data-email="'.$unSignataire['email'].'" '
                                                                 . 'data-fonction="'.$unSignataire['fonction'].'" '
-                                                                . 'data-codeEntreprise="'.$unSignataire['codeEntreprise'].'">'
+                                                                . 'data-codeEntreprise="'.$unSignataire['codeOrganisme'].'">'
                                                                 .$unSignataire['nom'].' '
                                                                 .$unSignataire['prenom'].'</option>');
                                                     }
@@ -56,7 +56,7 @@
                         <div class="form-group">
                             <label for="emailSignataire">E-mail : </label>
                             <input id="emailSignataire" name='emailSignataire' 
-                            type="text" class="form-control">
+                            type="email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="fonctionSignataire">Fonction : </label>
