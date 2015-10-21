@@ -20,14 +20,14 @@ $lesSection = getSection($connexion);
 
 if(isset($_POST['telephone']))
 {
-    $email = $_POST['email'];
+    $email = strtolower($_POST['email']);
     $password = $_POST['password'];
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $codeUtilisateur = 3;
     $telephone = $_POST['telephone'];
     $adresse = $_POST['adresse'];
-    $ville = $_POST['ville'];
+    $ville = strtoupper($_POST['ville']);
     $codePostal = (int)$_POST['codePostal'];
     $dateNaissance = $_POST['dateNaissance'];
     $sexe = (int)$_POST['sexe'];

@@ -27,7 +27,7 @@ function getLesStages($codeInscription,$connexion)
     $req = $connexion->prepare('SELECT codeStage, codeTuteur, codeSignataire, '
             . 'codeOrganisme, codePeriode, libelle, descriptif, statut, enseignantReferent '
             . 'FROM stage '
-            . 'WHERE codeInscription = 1');
+            . 'WHERE codeInscription = :codeInscription');
     
     $req->bindValue(':codeInscription',$codeInscription);
     

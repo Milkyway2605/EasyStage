@@ -69,3 +69,8 @@ table td:before
 {
     padding: 18px;
 }
+
+p.alert-info
+{
+    text-align: center;
+}

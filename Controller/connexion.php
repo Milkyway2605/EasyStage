@@ -6,7 +6,7 @@ include_once '../Modeles/accesInscrit.php';
 
 if(isset($_POST['email']) == true)
 {
-    $email = $_POST['email'];
+    $email = strtolower($_POST['email']);
     $password = $_POST['password'];
     $connexion = getConnexion();
     $authentification = checkAccount($email, $password, $connexion);

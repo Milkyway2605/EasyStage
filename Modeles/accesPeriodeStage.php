@@ -16,3 +16,17 @@ function getLesPeriodes($codeClasse, $anneeScolaire, $connexion)
     return $resultat;
 }
 
+function getLaPeriode($codePeriode, $connexion)
+{
+    $req = $connexion->prepare('SELECT dateDebut, dateFin '
+            . 'FROM periode_stage '
+            . 'WHERE codePeriode = :codePeriode');
+    
+    $req->bindValue(':codePeriode',$codePeriode);
+    
+    $req->execute();
+    $resultat = $req->fetch(PDO::FETCH_OBJ);
+    
+    return $resultat;
+}
+

@@ -25,7 +25,7 @@ $anneeScolaire = getAnneeScolaire();
 $codeClasse = (int)$_SESSION['codeClasse'];
 $lesOrganismes = getLesOrganismes($connexion);
 $codeSection = (int)getCodeSection($codeClasse, $connexion)->codeSection;
-$lesEnseignantsReferents = getInfoEnseignantReferent($codeSection, $connexion);
+$lesEnseignantsReferents = getInfoEnseignantReferentCodeSection($codeSection, $connexion);
 $lesSignataires = getLesSignataires($connexion);
 $lesTuteurs = getLesTuteurs($connexion);
 $codeOrganisme;
@@ -47,7 +47,7 @@ if(isset($_POST['fonctionTuteur']))
         $nomOrganisme = $_POST['nomOrganisme'];
         $metierPrincipal = $_POST['metierPrincipal'];
         $adresseOrganisme = $_POST['adresseOrganisme'];
-        $villeOrganisme = $_POST['villeOrganisme'];
+        $villeOrganisme = strtoupper($_POST['villeOrganisme']);
         $codePostalOrganisme = (int)$_POST['codePostalOrganisme'];
         $telephoneOrganisme = $_POST['telephoneOrganisme'];
         $codeOrganisme = (int)createOrganisme($nomOrganisme, $adresseOrganisme, 
