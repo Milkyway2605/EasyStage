@@ -3,6 +3,7 @@ include_once '../Modeles/accesBDD.php';
 include_once '../Modeles/accesUtilisateurs.php';
 include_once '../Modeles/accesEtudiant.php';
 include_once '../Modeles/accesInscrit.php';
+include_once '../Application/Features/getAnneeScolaire.php';
 
 if(isset($_POST['email']) == true)
 {
@@ -15,10 +16,11 @@ if(isset($_POST['email']) == true)
     {
         session_start();
         $_SESSION['email']= $email;
-        $_SESSION['password']= $password;
         $_SESSION['nom']= $authentification->nom;
         $_SESSION['prenom']=$authentification->prenom;
         $_SESSION['codeUtilisateur']=(int)$authentification->typeUtilisateur;
+        $_SESSION['cleEncryptage']=rand(10000000,99999999);
+        $_SESSION['anneeScolaire']= getAnneeScolaire();
         
         switch ($_SESSION['codeUtilisateur'])
         {
@@ -62,5 +64,4 @@ else
 
 
 
-?>
 

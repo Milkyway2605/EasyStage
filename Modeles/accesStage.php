@@ -37,3 +37,72 @@ function getLesStages($codeInscription,$connexion)
     return $resultat;
 }
 
+function getLesStagesProfesseurReferent($email,$connexion)
+{
+    $req = $connexion->prepare('SELECT codeStage, codeTuteur, codeSignataire, statut, '
+            . 'codeOrganisme, codeInscription, codePeriode, libelle, descriptif '
+            . 'FROM stage '
+            . 'WHERE enseignantReferent = :email '
+            . 'AND statut = 0');
+    
+    $req->bindValue(':email',$email);
+    
+    $req->execute();
+    $resultat = $req->fetchAll();
+    
+    return $resultat;
+}
+
+function getLesStagesAutreProfesseurReferent($email,$connexion)
+{
+    $req = $connexion->prepare('SELECT codeStage, codeTuteur, codeSignataire, statut, '
+            . 'codeOrganisme, codePeriode, codeInscription, libelle, descriptif, enseignantReferent '
+            . 'FROM stage '
+            . 'WHERE enseignantReferent != :email '
+            . 'AND statut = 0');
+    
+    $req->bindValue(':email',$email);
+    
+    $req->execute();
+    $resultat = $req->fetchAll();
+    
+    return $resultat;
+}
+
+function setStatut($codeStage,$emailEtudiant,$emailEnseignant,$statut,$anneeUniversitaire,$connexion)
+{
+    $req = $connexion->prepare('UPDATE stage '
+            . 'SET statut = :statut '
+            . 'WHERE codeInscription IN '
+            . '(SELECT codeInscription '
+            . 'FROM inscrit '
+            . 'WHERE email = :emailEtudiant '
+            . 'AND dateDebut = :anneeUniversitaire) '
+            . 'AND enseignantReferent = :emailEnseignant '
+            . 'AND codeStage = :codeStage ');
+    
+    $req->bindValue(':codeStage',$codeStage);
+    $req->bindValue(':emailEtudiant',$emailEtudiant);
+    $req->bindValue(':emailEnseignant',$emailEnseignant);
+    $req->bindValue(':statut',$statut);
+    $req->bindValue(':anneeUniversitaire',$anneeUniversitaire);
+    
+    $reussite = $req->execute();
+    
+    return $reussite;
+}
+
+function getUnStage($codeStage,$connexion)
+{
+    $req = $connexion->prepare('SELECT codeTuteur, codeSignataire, codeOrganisme, '
+            . 'codePeriode, libelle, descriptif, statut, enseignantReferent, codeInscription '
+            . 'FROM stage '
+            . 'WHERE codeStage = :codeStage');
+    
+    $req->bindValue(':codeStage',$codeStage);
+    
+    $req->execute();
+    $resultat = $req->fetch(PDO::FETCH_OBJ);
+    
+    return $resultat;
+}

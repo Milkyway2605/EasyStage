@@ -1,14 +1,14 @@
-<style type="text/css">
+<style type='text/css'>
 <!--
     table {width: 100%; border: none;}
     p {font-size: 8px; margin: 8px 0}
 -->
 </style>
-<page backtop="5mm" backbottom="5mm" backleft="5mm" backright="5mm" >
+<page backtop='5mm' backbottom='5mm' backleft='5mm' backright='5mm' >
     <table>
         <tr>
             <td style='width: 50%;'>
-                <img src="../Base/Ressources/Images/logo.jpg" alt="Logo Lycée André Malraux" style="height:30mm;">
+                <img src='../Base/Ressources/Images/logo.jpg' alt='Logo Lycée André Malraux' style='height:30mm;'>
             </td>
             <td style='width: 50%; vertical-align: bottom; padding: 20px;'>
                 &nbsp; Année universitaire: 2015-2016
@@ -82,23 +82,23 @@
                 </td>
             </tr>
         </table>
-        <table style="margin-top: 20px;">
+        <table style='margin-top: 20px;'>
             <tr>
-                <td style="width: 100%;">
+                <td style='width: 100%;'>
                     <p style='text-align: center; font-weight: bold;'>3- LE STAGIAIRE</p>
                     <p>
                         <table>
                             <tr>
-                                <td style="width: 25%;">
+                                <td style='width: 25%;'>
                                     Nom : 
                                 </td>
-                                <td style="width: 25%;">
+                                <td style='width: 25%;'>
                                     Prenom :
                                 </td>
-                                <td style="width: 25%;">
+                                <td style='width: 25%;'>
                                     Sexe :
                                 </td>
-                                <td style="width: 25%;">
+                                <td style='width: 25%;'>
                                     Né(e) le : __ /__ /____
                                 </td>
                             </tr>
@@ -107,7 +107,7 @@
                     <p>
                         <table>
                             <tr>
-                                <td style="width: 25%;">
+                                <td style='width: 25%;'>
                                     Adresse : 
                                 </td>
                             </tr>
@@ -116,10 +116,10 @@
                     <p>
                         <table>
                             <tr>
-                                <td style="width: 25%;">
+                                <td style='width: 25%;'>
                                     Téléphone : 
                                 </td>
-                                <td style="width: 75%;">
+                                <td style='width: 75%;'>
                                     Mél :
                                 </td>
                             </tr>
@@ -128,7 +128,7 @@
                     <p>
                         <table>
                             <tr>
-                                <td style="width: 100%;">
+                                <td style='width: 100%;'>
                                     INTITULE DE LA FORMATION OU DU CURSUS SUIVI DANS L'ETABLISSEMENT D'ENSEIGNEMENT SUPERIEUR ET VOLUME HORAIRE (ANNUEL OU SEMESTRIEL) : 
                                     <br>
                                     <br>
@@ -141,7 +141,7 @@
                 </td>
             </tr>
         </table>
-        <table style="margin-top: 20px;">
+        <table style='margin-top: 20px;'>
             <tr>
                 <td>
                     <p>
@@ -165,9 +165,9 @@
                 </td>
             </tr>
         </table>
-        <table style="margin-top: 30px;">
+        <table style='margin-top: 30px;'>
             <tr>
-                <td style="width: 50%;">
+                <td style='width: 50%;'>
                     <p>
                         ENCADREMENT DU STAGIAIRE PAR L'ETABLISSEMENT D'ENSEIGNMENT : 
                     </p>
@@ -181,10 +181,10 @@
                     <p>
                         <table>
                             <tr>
-                                <td style="width: 50%;">
+                                <td style='width: 50%;'>
                                     Téléphone :
                                 </td>
-                                <td style="width: 50%;">
+                                <td style='width: 50%;'>
                                     Mél : 
                                 </td>
                             </tr>
@@ -192,7 +192,7 @@
                     </p>
                     
                 </td>
-                <td style="width: 50%;">
+                <td style='width: 50%;'>
                     <p>
                         ENCADREMENT DU STAGIAIRE PAR L'ORGANISME D'ACCUEIL : 
                     </p>
@@ -206,10 +206,10 @@
                     <p>
                         <table>
                             <tr>
-                                <td style="width: 50%;">
+                                <td style='width: 50%;'>
                                     Téléphone :
                                 </td>
-                                <td style="width: 50%;">
+                                <td style='width: 50%;'>
                                     Mél : 
                                 </td>
                             </tr>
@@ -218,7 +218,7 @@
                 </td>
             </tr>
         </table>
-        <table style="margin-top: 20px;">
+        <table style='margin-top: 20px;'>
             <tr>
                 <td>
                     <p>

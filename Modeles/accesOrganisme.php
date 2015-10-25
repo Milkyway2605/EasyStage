@@ -11,7 +11,7 @@ function getLesOrganismes($connexion)
     return $resultat;
 }
 
-function getInfoOrganisme($codeOrganisme, $connexion)
+function getInfosOrganisme($codeOrganisme, $connexion)
 {
     $req = $connexion->prepare('SELECT nom, adresse, ville, codePostal, '
             . 'metierPrincipal, telephone '

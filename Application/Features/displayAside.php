@@ -42,6 +42,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -55,6 +56,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -68,6 +70,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($utilisateursActive);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -81,6 +84,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
+                    include_once($stagesActive);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -94,6 +98,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classesActive);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -107,6 +112,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaireActive);
                     
@@ -126,6 +132,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -139,6 +146,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -152,6 +160,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($etudiantsActive);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -165,6 +174,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
+                    include_once($stagesActive);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -178,6 +188,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classesActive);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaire);
                     
@@ -191,6 +202,7 @@ function displayAside($userType, $activeCategory)
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
+                    include_once($stages);
                     include_once($autres);
                     include_once($annuaireActive);
                     

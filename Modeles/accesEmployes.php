@@ -45,3 +45,30 @@ function createEmploye($nom,$prenom,$telephone,$email,$fonction,$codeOrganisme,$
     
     return $resultat;
 }
+
+
+function getInfosSignataire($codeSignataire,$connexion)
+{
+    $req = $connexion->prepare('SELECT nom, prenom, telephone, email, fonction '
+            . 'FROM employes '
+            . 'WHERE codeEmploye = :codeSignataire ');
+    $req->bindValue(':codeSignataire',$codeSignataire);
+    
+    $req->execute();
+    $resultat = $req->fetch(PDO::FETCH_OBJ);
+    
+    return $resultat;
+}
+
+function getInfosTuteur($codeTuteur,$connexion)
+{
+    $req = $connexion->prepare('SELECT nom, prenom, telephone, email, fonction '
+            . 'FROM employes '
+            . 'WHERE codeEmploye = :codeTuteur ');
+    $req->bindValue(':codeTuteur',$codeTuteur);
+    
+    $req->execute();
+    $resultat = $req->fetch(PDO::FETCH_OBJ);
+    
+    return $resultat;
+}

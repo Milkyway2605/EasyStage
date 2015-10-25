@@ -12,3 +12,4 @@ function createSignataire($codeSignataire,$connexion)
     
     return $reussite;
 }
+

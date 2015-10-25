@@ -47,3 +47,4 @@ function getCodeSection($codeClasse,$connexion)
     
     return $resultat; 
 }
+

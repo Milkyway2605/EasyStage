@@ -27,7 +27,7 @@ if(isset($_POST['telephone']))
     $codeUtilisateur = 3;
     $telephone = $_POST['telephone'];
     $adresse = $_POST['adresse'];
-    $ville = strtoupper($_POST['ville']);
+    $ville = $_POST['ville'];
     $codePostal = (int)$_POST['codePostal'];
     $dateNaissance = $_POST['dateNaissance'];
     $sexe = (int)$_POST['sexe'];

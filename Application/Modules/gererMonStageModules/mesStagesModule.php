@@ -1,26 +1,23 @@
 <div id="mesStages" class="panel-group">
     
 <?php
-
+    $i = 0;
     foreach ($lesStages as $unStage)
     {
         
         $laPeriode = getLaPeriode((int)$unStage['codePeriode'], $connexion);
-        $infoOrganisme = getInfoOrganisme((int)$unStage['codeOrganisme'], $connexion);
-        $enseignantReferent = getInfoEnseignantReferentEmail($unStage['enseignantReferent'], $connexion);
-        
-        $_SESSION['anneeUniversitaire'] = $anneeScolaire;
-        $_SESSION['nomOrganisme'] = $infoOrganisme->nom;
-        $_SESSION['adresseOrganisme'] = $infoOrganisme->adresse.'<br>'.$infoOrganisme->codePostal.' '.$infoOrganisme->ville;
+        $infoOrganisme = getInfosOrganisme((int)$unStage['codeOrganisme'], $connexion);
+        $enseignantReferent = getInfosEnseignantReferentEmail($unStage['enseignantReferent'], $connexion);
+        $codeStage = encrypt((int)$unStage['codeStage']);
         
         echo('<div class="panel">');
         
         echo('  <div class="panel-heading row"> 
-                    <a href="#'.$unStage['codeStage'].'" data-parent="#STAGE'.$unStage['codeStage'].'" data-toggle="collapse">
+                    <a href="#stage'.$i.'" data-parent="#mesStages" data-toggle="collapse">
                         '.$unStage['libelle'].'
                     </a> 
                 </div>');
-        echo('  <div id="'.$unStage['codeStage'].'" class="panel-collapse collapse">');
+        echo('  <div id="stage'.$i.'" class="panel-collapse collapse">');
         echo('      <div class="panel-body">');
         echo('          <table class="col-xs-12">');
         echo('              <thead>
@@ -85,7 +82,7 @@
         {
         echo('                      <td data-label="Action">                                            
                                         <span class="td-responsive">
-                                            <a class="label label-default" href="convention.php">
+                                            <a class="label label-default" href="convention.php?codeStage='.$codeStage.'">
                                                 <i class="fa fa-print icon-right"></i>
                                                 Voir la convention
                                             </a>
@@ -105,4 +102,5 @@
         echo('      </div>');
         echo('  </div>');
         echo('</div>');
+        $i++;
     }

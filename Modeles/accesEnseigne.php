@@ -1,6 +1,6 @@
 <?php
 
-function getInfoEnseignantReferentCodeSection($codeSection,$connexion)
+function getInfosEnseignantReferentCodeSection($codeSection,$connexion)
 {
     $req = $connexion->prepare('SELECT e.email, nom, prenom FROM enseigne e '
             . 'INNER JOIN utilisateurs u '
@@ -15,7 +15,7 @@ function getInfoEnseignantReferentCodeSection($codeSection,$connexion)
     return $resultat;
 }
 
-function getInfoEnseignantReferentEmail($email, $connexion)
+function getInfosEnseignantReferentEmail($email, $connexion)
 {
     $req = $connexion->prepare('SELECT e.email, nom, prenom FROM enseigne e '
             . 'INNER JOIN utilisateurs u '

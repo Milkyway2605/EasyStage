@@ -44,3 +44,48 @@ function getCodeInscrit($email,$codeClasse,$anneeScolaire,$connexion)
     
     return $resultat;
 }
+
+function getInfosEtudiantCodeInscription($codeInscription,$connexion)
+{
+    $req = $connexion->prepare('SELECT nom, prenom, e.email '
+            . 'FROM utilisateurs u '
+            . 'INNER JOIN etudiant e '
+            . 'ON u.email = e.email '
+            . 'INNER JOIN inscrit i '
+            . 'ON e.email = i.email '
+            . 'WHERE codeInscription = :codeInscription ');
+    
+    $req->bindValue(':codeInscription',$codeInscription);
+    
+    $req->execute();
+    $resultat = $req->fetch(PDO::FETCH_OBJ);
+    
+    return $resultat;
+}
+
+function getInfosClasse($codeInscription,$connexion)
+{
+   $req = $connexion->prepare('SELECT libelleSection, niveau '
+           . 'FROM section s '
+           . 'INNER JOIN classe c '
+           . 'ON s.codeSection = c.codeSection '
+           . 'INNER JOIN inscrit i '
+           . 'ON c.codeClasse = i.codeClasse '
+           . 'WHERE codeInscription = :codeInscription');
+    
+    $req->bindValue(':codeInscription',$codeInscription);
+    
+    $req->execute();
+    $ligne = $req->fetch(PDO::FETCH_OBJ);
+    
+    if($ligne == false)
+    {
+        $resultat = null;
+    }
+    else
+    {
+        $resultat = $ligne;                
+    }
+    
+    return $resultat; 
+}

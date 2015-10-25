@@ -37,140 +37,12 @@ include_once '../Application/Base/layout_content_02.php';
                         </li>
                     </ul>
                     
-                  <div class="tab-content">
-                        <div class="tab-pane fade in active" id="dash">
-                            
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Statut</th>
-                                        <th>Etudiant</th>
-                                        <th>Classe</th>
-                                        <th>Libellé</th>
-                                        <th>Descriptif</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td data-label="Statut">
-                                            <span class="td-responsive">
-                                                <span class="label label-warning">
-                                                    En attente
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td data-label="Etudiant">
-                                            <span class="td-responsive">
-                                                Lespagnol Guillaume
-                                            </span></td></td>
-                                        <td data-label="Classe">
-                                            <span class="td-responsive">
-                                                BTS SIO 2
-                                            </span></td>
-                                        </td>
-                                        <td data-label="Libellé">                                            
-                                            <span class="td-responsive">
-                                                Développement web
-                                            </span></td>
-                                        <td data-label="Descriptif">
-                                            <span class="td-responsive">
-                                                Développement d'une application web pour la gestion de stage
-                                            </span>
-                                        </td>
-                                        <td data-label="Action">                                            
-                                            <span class="td-responsive">
-                                                <span class="label label-default">Pas d'action</span>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                        </div>
+                    <div class="tab-content">                       
                       
-                        <div class="tab-pane fade" id="blog">
-                            
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Statut</th>
-                                        <th>Etudiant</th>
-                                        <th>Classe</th>
-                                        <th>Libellé</th>
-                                        <th>Descriptif</th>
-                                        <th>Professeur</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td data-label="Statut">
-                                            <span class="td-responsive">
-                                                <span class="label label-warning">
-                                                    En attente
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td data-label="Etudiant">
-                                            <span class="td-responsive">
-                                                Lespagnol Guillaume
-                                            </span></td></td>
-                                        <td data-label="Classe">
-                                            <span class="td-responsive">
-                                                BTS SIO 2
-                                            </span></td>
-                                        </td>
-                                        <td data-label="Libellé">                                            
-                                            <span class="td-responsive">
-                                                Développement web
-                                            </span></td>
-                                        <td data-label="Descriptif">
-                                            <span class="td-responsive">
-                                                Développement d'une application web pour la gestion de stage
-                                            </span>
-                                        </td>
-                                        <td data-label="Professeur">                                            
-                                            <span class="td-responsive">
-                                                Non défini
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Statut">
-                                            <span class="td-responsive">
-                                                <span class="label label-success">
-                                                    Validé
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td data-label="Etudiant">
-                                            <span class="td-responsive">
-                                                Lespagnol Guillaume
-                                            </span></td></td>
-                                        <td data-label="Classe">
-                                            <span class="td-responsive">
-                                                BTS SIO 2
-                                            </span></td>
-                                        </td>
-                                        <td data-label="Libellé">                                            
-                                            <span class="td-responsive">
-                                                Développement web
-                                            </span></td>
-                                        <td data-label="Descriptif">
-                                            <span class="td-responsive">
-                                                Développement d'une application web pour la gestion de stage
-                                            </span>
-                                        </td>
-                                        <td data-label="Professeur">                                            
-                                            <span class="td-responsive">
-                                                Non défini
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                        </div>
+                        <?php            
+                            include_once '../Application/Modules/gererStageModules/vosValidationsModule.php';
+                            include_once '../Application/Modules/gererStageModules/autresValidationsModule.php';
+                        ?>
                       
                     </div>
                 </div>
@@ -184,6 +56,8 @@ include_once '../Application/Base/layout_content_03.php';
 include_once '../Application/Base/layout_footer.php';
 include_once '../Application/Base/layout_baseJavascript.php';
 ?>
+    
+<script src="../Application/Ressources/Javascript/gererStage.js" type="text/javascript"></script>
     
 <?php
 include_once '../Application/Base/layout_endPage.php';

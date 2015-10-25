@@ -41,6 +41,8 @@ include_once '../Application/Base/layout_footer.php';
 include_once '../Application/Base/layout_baseJavascript.php';
 ?>
     
+    <script src="../Application/Ressources/Javascript/gererMesStages.js" type="text/javascript"></script>
+    
 <?php
 include_once '../Application/Base/layout_endPage.php';
 ?>
