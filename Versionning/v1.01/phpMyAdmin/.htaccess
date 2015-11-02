@@ -1,0 +1,4 @@
+AuthName "Page protégée, il faut saisir un compte administrateur "
+AuthType Basic
+AuthUserFile "/homepages/3/d433788994/htdocs/sio2/easystage/phpMyAdmin/.fichiersecu"
+Require valid-user

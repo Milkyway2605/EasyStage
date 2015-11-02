@@ -82,6 +82,21 @@ function setPassword($email, $password, $connexion)
     return $reussite;
 }
 
+function setCle($email, $cle, $finValidite, $connexion)
+{
+    $req = $connexion->prepare('UPDATE utilisateurs '
+            . 'SET cle = :cle, finValidite = FROM_UNIXTIME(:finValidite) '
+            . 'WHERE email = :email');
+    
+    $req->bindValue(':email',$email);
+    $req->bindValue(':cle',$cle);
+    $req->bindValue(':finValidite',$finValidite);
+    
+    $reussite = $req->execute();
+    
+    return $reussite;
+}
+
 /**
  * Fonction qui retourne une clé unique lié à l'utilisateur si elle est définie, sinon retourne null.
  * @param string $email Email de l'utilisateur.
@@ -91,7 +106,7 @@ function setPassword($email, $password, $connexion)
  */
 function getCle($email, $connexion)
 {
-    $req = $connexion->prepare('SELECT cle '
+    $req = $connexion->prepare('SELECT cle, finValidite '
         . 'FROM utilisateurs '
         . 'WHERE email = :email');
     
@@ -107,6 +122,29 @@ function getCle($email, $connexion)
     else
     {
         $resultat = $ligne;                
+    }
+    
+    return $resultat;
+}
+
+function checkEmail($email, $connexion)
+{
+    $req = $connexion->prepare('SELECT email '
+            . 'FROM utilisateurs '
+            . 'WHERE email = :email ');
+    
+    $req->bindValue(':email',$email);
+    
+    $req->execute();
+    $ligne = $req->fetch(PDO::FETCH_OBJ);
+    
+    if($ligne == false)
+    {
+        $resultat = false;
+    }
+    else
+    {
+        $resultat = true;                
     }
     
     return $resultat;
