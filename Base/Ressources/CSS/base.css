@@ -64,7 +64,7 @@ label
     background-color: #87A1D7;
     background-image: none;
     color: white;
-    border-color : #87A1D7;
+    border : none;
 }
 
 .alert-danger
@@ -72,7 +72,7 @@ label
     background-color: #E78174;
     background-image: none;
     color: white;
-    border-color : #87A1D7;
+    border : none;
 }
 
 .alert-success
@@ -80,7 +80,7 @@ label
     background-color: #4EB77E;
     background-image: none;
     color: white;
-    border-color : #4EB77E;
+    border : none;
 }
 
 /*rgba(70, 111, 193, 0.65);*/

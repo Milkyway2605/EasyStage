@@ -78,7 +78,7 @@
                     </p>
                     <p>
                         Représenté par (signataire de la convention) : <br>
-                        Pascal HARY
+                        <strong>Pascal HARY</strong>
                     </p>
                     <p>
                         Qualité du représentant : Proviseur
@@ -101,7 +101,7 @@
                     </p>
                     <p>
                         Représenté par (nom du signataire de la convention) : <br> 
-                        <?php echo($signataire->prenom.' '.strtoupper($signataire->nom)); ?>                        
+                        <strong><?php echo($signataire->prenom.' '.strtoupper($signataire->nom)); ?> </strong>                       
                     </p>
                     <p>
                         Qualité du représentant : <?php echo($signataire->fonction); ?>
@@ -131,10 +131,10 @@
                         <table>
                             <tr>
                                 <td style="width: 25%;">
-                                    Nom : <?php echo($nomEtudiant); ?>
+                                    Nom : <strong><?php echo(strtoupper($nomEtudiant)); ?></strong>
                                 </td>
                                 <td style="width: 25%;">
-                                    Prenom : <?php echo($prenomEtudiant); ?>
+                                    Prenom : <strong><?php echo($prenomEtudiant); ?></strong>
                                 </td>
                                 <td style="width: 25%;">
                                     Sexe : <?php echo($sexe); ?>
@@ -212,8 +212,8 @@
                         ENCADREMENT DU STAGIAIRE PAR L'ETABLISSEMENT D'ENSEIGNMENT : 
                     </p>
                     <p>
-                        Nom et prénom de l'enseignant référent : <br><br>
-                        Equipe enseignante du lycée André Malraux
+                        Nom et prénom de l'enseignant référent : <br>
+                        <strong>Equipe enseignante du lycée André Malraux</strong>
                     </p>
                     <p>
                         Fonction (ou discipline) : Enseignement
@@ -225,7 +225,7 @@
                                     Téléphone : 03 21 64 61 61
                                 </td>
                                 <td style="width: 50%;">
-                                    Mél : 
+                                    Mél : bruno.marais@ac-lille.fr
                                 </td>
                             </tr>
                         </table>
@@ -237,8 +237,8 @@
                         ENCADREMENT DU STAGIAIRE PAR L'ORGANISME D'ACCUEIL : 
                     </p>
                     <p>
-                        Nom et prénom du tuteur de stage : <br><br>
-                        <?php echo($tuteur->nom.' '.$tuteur->prenom) ?>
+                        Nom et prénom du tuteur de stage : <br>
+                        <strong><?php echo($tuteur->prenom.' '.strtoupper($tuteur->nom)); ?></strong>
                     </p>
                     <p>
                         Fonction : <?php echo($tuteur->fonction) ?>
