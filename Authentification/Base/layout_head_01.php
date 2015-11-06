@@ -9,16 +9,16 @@
         <title>Application EasyStage</title>
         
         <!-- Bootstrap -->
-        <link href="../Base/Ressources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../Base/Ressources/Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Base/Ressources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Base/Ressources/Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         
         <!-- Common CSS -->
-        <link href="../Base/Ressources/CSS/base.css" rel="stylesheet" type="text/css"/>
-        <link href="../Base/Ressources/CSS/classes.css" rel="stylesheet" type="text/css"/>
-        <link href="../Base/Ressources/CSS/maintain.css" rel="stylesheet" type="text/css"/>
-        <link href="../Base/Ressources/CSS/responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="Base/Ressources/CSS/base.css" rel="stylesheet" type="text/css"/>
+        <link href="Base/Ressources/CSS/classes.css" rel="stylesheet" type="text/css"/>
+        <link href="Base/Ressources/CSS/maintain.css" rel="stylesheet" type="text/css"/>
+        <link href="Base/Ressources/CSS/responsive.css" rel="stylesheet" type="text/css"/>
         
         <!-- Specific Base CSS -->
-        <link href="../Authentification/Base/Ressources/CSS/authentificationBase.css" rel="stylesheet" type="text/css"/>
+        <link href="Authentification/Base/Ressources/CSS/authentificationBase.css" rel="stylesheet" type="text/css"/>
         
         <!-- Specific CSS -->

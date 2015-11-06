@@ -7,7 +7,7 @@
                         <a id="menuButton" class='icon pull-right'><i class="fa fa-bars"></i></a>
                     </div>
                     <div class='navbarBody col-lg-10 col-md-9 col-sm-8'>
-                        <a class='icon pull-right' href="../Application/Features/sessionDestruct.php">
+                        <a class='icon pull-right' href="Application/Features/sessionDestruct.php">
                             <i class="fa fa-sign-out"></i>
                         </a>
                         <a class='icon pull-right' data-toggle="dropdown" href="#">

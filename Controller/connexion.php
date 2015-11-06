@@ -1,9 +1,9 @@
 <?php
-include_once '../Modeles/accesBDD.php';
-include_once '../Modeles/accesUtilisateurs.php';
-include_once '../Modeles/accesEtudiant.php';
-include_once '../Modeles/accesInscrit.php';
-include_once '../Application/Features/getAnneeScolaire.php';
+include_once 'Modeles/accesBDD.php';
+include_once 'Modeles/accesUtilisateurs.php';
+include_once 'Modeles/accesEtudiant.php';
+include_once 'Modeles/accesInscrit.php';
+include_once 'Application/Features/getAnneeScolaire.php';
 
 if(isset($_POST['email']) == true)
 {
@@ -48,17 +48,17 @@ if(isset($_POST['email']) == true)
                 break;
         }
         
-        header('Location: accueil.php');
+        header('Location: accueil.html');
         exit;
     }
     else
     {
-        include_once '../Authentification/Views/loginErrorView.php';
+        include_once 'Authentification/Views/loginErrorView.php';
     }
 }
 else
 {
-    include_once '../Authentification/Views/loginView.php';
+    include_once 'Authentification/Views/loginView.php';
 }
 
 
