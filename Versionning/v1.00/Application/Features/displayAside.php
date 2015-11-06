@@ -38,13 +38,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueilActive);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -52,13 +52,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profilActive);
+                    //include_once($profilActive);
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -66,13 +66,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($utilisateursActive);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -80,13 +80,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
                     include_once($stagesActive);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -94,13 +94,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classesActive);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -108,13 +108,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($utilisateurs);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaireActive);
+                    //include_once($autres);
+                    //include_once($annuaireActive);
                     
                     break;
             }            
@@ -128,13 +128,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueilActive);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -142,13 +142,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profilActive);
+                    //include_once($profilActive);
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -156,13 +156,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($etudiantsActive);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -170,13 +170,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
                     include_once($stagesActive);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -184,13 +184,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classesActive);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -198,13 +198,13 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($etudiants);
                     include_once($classes);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaireActive);
+                    //include_once($autres);
+                    //include_once($annuaireActive);
                     
                     break;
             }
@@ -218,11 +218,11 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueilActive);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -230,11 +230,11 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profilActive);
+                    //include_once($profilActive);
                     include_once($gestion);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -242,11 +242,11 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -254,11 +254,11 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($stagesActive);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -266,11 +266,11 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaire);
+                    //include_once($autres);
+                    //include_once($annuaire);
                     
                     break;
                 
@@ -278,11 +278,11 @@ function displayAside($userType, $activeCategory)
                     
                     include_once($navigationPrincipale);
                     include_once($accueil);
-                    include_once($profil);
+                    //include_once($profil);
                     include_once($gestion);
                     include_once($stages);
-                    include_once($autres);
-                    include_once($annuaireActive);
+                    //include_once($autres);
+                    //include_once($annuaireActive);
                     
                     break;
             }

@@ -58,3 +58,29 @@ label
 {
     padding: 0 15px;
 }
+
+.alert-info
+{
+    background-color: #87A1D7;
+    background-image: none;
+    color: white;
+    border-color : #87A1D7;
+}
+
+.alert-danger
+{
+    background-color: #E78174;
+    background-image: none;
+    color: white;
+    border-color : #87A1D7;
+}
+
+.alert-success
+{
+    background-color: #4EB77E;
+    background-image: none;
+    color: white;
+    border-color : #4EB77E;
+}
+
+/*rgba(70, 111, 193, 0.65);*/

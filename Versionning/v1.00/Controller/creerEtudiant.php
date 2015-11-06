@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 
 //Fonction utilitaires
@@ -16,37 +16,47 @@ include_once '../Modeles/accesInscrit.php';
 
 backConnexion();
 $connexion = getConnexion();
+$autorisationAcces = checkDroit($_SESSION['codeUtilisateur'], $_SESSION['email'], $connexion);
 $lesSection = getSection($connexion);
-
-if(isset($_POST['telephone']))
-{
-    $email = strtolower($_POST['email']);
-    $password = $_POST['password'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $codeUtilisateur = 3;
-    $telephone = $_POST['telephone'];
-    $adresse = $_POST['adresse'];
-    $ville = $_POST['ville'];
-    $codePostal = (int)$_POST['codePostal'];
-    $dateNaissance = $_POST['dateNaissance'];
-    $sexe = (int)$_POST['sexe'];
-    $codeSection = (int)$_POST['section'];
-    $niveau = (int)$_POST['niveau'];
-    $codeClasse = (int)getCodeClasse($codeSection, $niveau, $connexion)->codeClasse;
-    $anneeScolaire = getAnneeScolaire();
-
-    $succes = createUtilisateur($email, $password, $nom, $prenom, $codeUtilisateur, $connexion);
-    
-    if($succes == TRUE)
+//if($autorisationAcces != 1)
+//{
+   if(isset($_POST['telephone']))
     {
-        $succes = createEtudiant($email, $telephone, $adresse, $ville, $codePostal, $dateNaissance, $sexe, $connexion);
-        
+        $email = strtolower($_POST['email']);
+        $password = $_POST['password'];
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $codeUtilisateur = 3;
+        $telephone = $_POST['telephone'];
+        $adresse = $_POST['adresse'];
+        $ville = $_POST['ville'];
+        $codePostal = (int)$_POST['codePostal'];
+        $dateNaissance = $_POST['dateNaissance'];
+        $sexe = (int)$_POST['sexe'];
+        $codeSection = (int)$_POST['section'];
+        $niveau = (int)$_POST['niveau'];
+        $codeClasse = (int)getCodeClasse($codeSection, $niveau, $connexion)->codeClasse;
+        $anneeScolaire = getAnneeScolaire();
+
+        $succes = createUtilisateur($email, $password, $nom, $prenom, $codeUtilisateur, $connexion);
+
         if($succes == TRUE)
         {
-            $succes = createInscrit($codeClasse, $email, $anneeScolaire, $connexion);
+            $succes = createEtudiant($email, $telephone, $adresse, $ville, $codePostal, $dateNaissance, $sexe, $connexion);
+
+            if($succes == TRUE)
+            {
+                $succes = createInscrit($codeClasse, $email, $anneeScolaire, $connexion);
+            }
         }
     }
-}
 
-include_once '../Application/Views/creerEtudiantView.php';
+    include_once '../Application/Views/creerEtudiantView.php'; 
+//}
+/*else
+{
+    header('Location: accueil.php');
+    exit();
+}*/
+
+

@@ -6,10 +6,10 @@ include_once '../Authentification/Base/layout_head_01.php';
 include_once '../Authentification/Base/layout_head_02.php';
 include_once '../Authentification/Base/layout_content_01.php';
 ?>
-                    <p id='signupInformation alert-danger'>Le mot de passe saisit et sa 
+                    <p id='signupInformation' class='alert-danger'>Le mot de passe saisit et sa 
                     confirmation doivent être identiques</p>
                     <hr>
-                    <form method="POST" action="passwordReset.php?email=<?php echo($email.'&cle'.$cle);?>">
+                    <form method="POST" action="passwordReset.php">
                         <div class="input-group">
                             <input type='password' id="password" name="password" class='
                             form-control' placeholder="Saisir votre mot de passe" required="true">

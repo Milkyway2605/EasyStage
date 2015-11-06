@@ -61,6 +61,30 @@ function checkAccount($email, $password, $connexion)
     return $resultat;
 }
 
+function checkDroit($codeUtilisateur,$email,$connexion)
+{
+        $req = $connexion->prepare('SELECT * '
+                . 'FROM utilisateurs '
+                . 'WHERE email = :email '
+                . 'AND typeUtilisateur = :codeUtilisateur ');
+    
+    $req->bindValue(':email',$email);
+    $req->bindValue(':codeUtilisateur',$codeUtilisateur);
+    
+    $req->execute();
+    $ligne = $req->fetch(PDO::FETCH_OBJ);
+    
+    if($ligne == false)
+    {
+        $resultat = 0;
+    }
+    else
+    {
+        $resultat = 1;                
+    }
+    
+    return $resultat;
+}
 /**
  * Fonction permettant de modifier le mot de passe d'un utilisateur.
  * @param string $email Email de l'utilisateur.

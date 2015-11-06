@@ -28,7 +28,7 @@ include_once '../Authentification/Base/layout_content_01.php';
                 </div>
                 
                 <div class="panel-footer">
-                    <a href='construction.php' id="forgetPassword">Mot de passe oublié ?</a>
+                    <a href='forgetPassword.php' id="forgetPassword">Mot de passe oublié ?</a>
                 </div>
 
 <?php

@@ -25,6 +25,11 @@ include_once '../Authentification/Base/layout_content_01.php';
                         <input type='submit' id="submit" name="submit" 
                         value="Connexion" class='form-control btn'></br>
                     </form>
+                </div>
+                    
+                <div class="panel-footer">
+                    <a href='forgetPassword.php' id="forgetPassword">Mot de passe oublié ?</a>
+                </div>
 
 <?php
 include_once '../Authentification/Base/layout_content_02.php';

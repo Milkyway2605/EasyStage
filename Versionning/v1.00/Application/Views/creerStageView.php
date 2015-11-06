@@ -27,7 +27,7 @@ include_once '../Application/Base/layout_content_02.php';
         {
             echo('<div class="alert-container col-lg-10 col-lg-offset-1 col-md-12">
                     <div class="alert-success">
-                        La création du stage � réussi :-) .
+                        La création du stage a réussi :-) .
                     </div>
                 </div>');
         }

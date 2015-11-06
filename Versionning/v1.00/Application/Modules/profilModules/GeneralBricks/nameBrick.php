@@ -21,11 +21,11 @@
                             <form class="col-lg-12">
                                 <div class="form-group col-sm-8">
                                     <input id="prenom" name="prenom" type="text" 
-                                    placeholder="Prénom" class="form-control">
+                                    placeholder="Prénom" class="form-control" required>
                                 </div>
                                 <div class="form-group col-sm-8">
                                     <input id="nom" name="nom" type="text" 
-                                    placeholder="Nom de famille" class="form-control">
+                                    placeholder="Nom de famille" class="form-control" required>
                                 </div>
                                 <div class="form-group col-sm-8">
                                     <a class="btn col-sm-4" href="#item1" 

@@ -10,7 +10,7 @@
                         <a class='icon pull-right' href="../Application/Features/sessionDestruct.php">
                             <i class="fa fa-sign-out"></i>
                         </a>
-                        <a class='icon pull-right' data-toggle="dropdown" href="#">
+                        <a class='icon pull-right hide' data-toggle="dropdown" href="#">
                             <i class="fa fa-bell-o"></i>
                             <div class="notifications label label-danger hide">11</div>
                         </a>

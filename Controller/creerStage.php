@@ -21,6 +21,7 @@ include_once '../Modeles/accesStage.php';
 
 backConnexion();
 $connexion = getConnexion();
+$autorisationAcces = checkDroit($_SESSION['codeUtilisateur'], $_SESSION['email'], $connexion);
 $anneeScolaire = getAnneeScolaire();
 $codeClasse = (int)$_SESSION['codeClasse'];
 $lesOrganismes = getLesOrganismes($connexion);
