@@ -1,7 +1,17 @@
 <?php
 
 // Déclaration de la page d'accueil
-$fmk->initIndexRoute("login", "", "Controller/connexion.php", "index");
+$fmk->initIndexRoute("index", "", "Controller/connexion.php", "index");
 //cette ligne crée une route les arguments sont le nom, l'adresse lisible, le chemin vers le contrôleur et l'action
-$fmk->initRoute("connexion", "connexion.html", "Controller/connexion.php", "index");
-$fmk->initRoute("accueil", "accueil.html", "Controller/accueil.php", "index");
+$fmk->initRoute("login", "index.php", "Controller/connexion.php","index");
+//$fmk->initRoute("login2", "connexion.php", "Controller/connexion.php","index");
+$fmk->initRoute("accueil", "accueil.php", "Controller/accueil.php", "index");
+$fmk->initRoute("profil", "profil.php", "Controller/profil.php", "index");
+$fmk->initRoute("creerStage", "creerStage.php", "Controller/creerStage.php", "index");
+$fmk->initRoute("gererMonStage", "gererMonStage.php", "Controller/gererMonStage.php", "index");
+$fmk->initRoute("convention", "convention.php", "Controller/convention.php", "index");
+$fmk->initRoute("passwordReset", "passwordReset.php", "Controller/passwordReset.php", "index");
+$fmk->initRoute("forgetPassword", "forgetPassword.php", "Controller/forgetPassword.php", "index");
+$fmk->initRoute("creerEtudiant", "creerEtudiant.php", "Controller/creerEtudiant.php", "index");
+$fmk->initRoute("gererStage", "gererStage.php", "Controller/gererStage.php", "index");
+

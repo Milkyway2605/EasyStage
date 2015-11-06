@@ -2,25 +2,23 @@
 session_start();
 
 //Fonction utilitaires
-include_once '../Application/Features/backConnexion.php';
-include_once '../Application/Features/date.php';
-include_once '../Application/Features/getAnneeScolaire.php';
+include_once 'Application/Features/backConnexion.php';
+include_once 'Application/Features/date.php';
+include_once 'Application/Features/getAnneeScolaire.php';
 
 //Fonction d'accès aux données
-include_once '../Modeles/accesBDD.php';
-include_once '../Modeles/accesUtilisateurs.php';
-include_once '../Modeles/accesEtudiant.php';
-include_once '../Modeles/accesSection.php';
-include_once '../Modeles/accesClasse.php';
-include_once '../Modeles/accesInscrit.php';
+include_once 'Modeles/accesBDD.php';
+include_once 'Modeles/accesUtilisateurs.php';
+include_once 'Modeles/accesEtudiant.php';
+include_once 'Modeles/accesSection.php';
+include_once 'Modeles/accesClasse.php';
+include_once 'Modeles/accesInscrit.php';
 
 backConnexion();
 $connexion = getConnexion();
-$autorisationAcces = checkDroit(2, $_SESSION['email'], $connexion);
 $lesSection = getSection($connexion);
 
-if($autorisationAcces == 1)
-{
+
    if(isset($_POST['telephone']))
     {
         $email = strtolower($_POST['email']);
@@ -52,13 +50,8 @@ if($autorisationAcces == 1)
         }
     }
 
-    include_once '../Application/Views/creerEtudiantView.php'; 
-}
-else
-{
-    header('Location: accueil.php');
-    exit();
-}  
+    include_once 'Application/Views/creerEtudiantView.php'; 
+
 
 
 

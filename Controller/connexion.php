@@ -48,7 +48,7 @@ if(isset($_POST['email']) == true)
                 break;
         }
         
-        header('Location: accueil.html');
+        header('Location: accueil.php');
         exit;
     }
     else

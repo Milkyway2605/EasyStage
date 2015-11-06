@@ -1,10 +1,10 @@
 <?php
-include_once '../Base/layout_head_01.php';
+include_once 'Base/layout_head_01.php';
 ?>
 
 <?php
-include_once '../Base/layout_head_02.php';
-include_once '../Base/layout_content_01.php';
+include_once 'Base/layout_head_02.php';
+include_once 'Base/layout_content_01.php';
 ?>
                     <p id='signupInformation'>Bienvenu(e) Prénom Nom. 
                     Merci de renseigner quelques informations supplémentaires pour valider votre inscription.</p>
@@ -29,10 +29,10 @@ include_once '../Base/layout_content_01.php';
                     </form>
 
 <?php
-include_once '../Base/layout_content_02.php';
-include_once '../Base/layout_baseJavascript.php';
+include_once 'Base/layout_content_02.php';
+include_once 'Base/layout_baseJavascript.php';
 ?>
     
 <?php
-include_once '../Base/layout_endPage.php';
+include_once 'Base/layout_endPage.php';
 ?>

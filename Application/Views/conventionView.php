@@ -1,18 +1,18 @@
 <?php
     
     //Fonction utilitaires
-    include_once '../Application/Features/date.php';
-    include_once '../Application/Features/calculPeriode.php';
-    include_once '../Base/Ressources/html2pdf/html2pdf.class.php';
+    include_once 'Application/Features/date.php';
+    include_once 'Application/Features/calculPeriode.php';
+    include_once 'Base/Ressources/html2pdf/html2pdf.class.php';
     
     //Fonction d'accès aux données
-    include_once '../Modeles/accesBDD.php';
-    include_once '../Modeles/accesStage.php';
-    include_once '../Modeles/accesInscrit.php';
-    include_once '../Modeles/accesPeriodeStage.php';
-    include_once '../Modeles/accesOrganisme.php';
-    include_once '../Modeles/accesEnseigne.php';
-    include_once '../Modeles/accesEmployes.php';
+    include_once 'Modeles/accesBDD.php';
+    include_once 'Modeles/accesStage.php';
+    include_once 'Modeles/accesInscrit.php';
+    include_once 'Modeles/accesPeriodeStage.php';
+    include_once 'Modeles/accesOrganisme.php';
+    include_once 'Modeles/accesEnseigne.php';
+    include_once 'Modeles/accesEmployes.php';
     
     $connexion = getConnexion();
     $codeStage = $_SESSION['codeStage'];
@@ -49,7 +49,7 @@
     <table>
         <tr>
             <td style='width: 50%;'>
-                <img src="../Base/Ressources/Images/logo.jpg" alt="Logo Lycée André Malraux" style="height:30mm;">
+                <img src="Base/Ressources/Images/logo.jpg" alt="Logo Lycée André Malraux" style="height:30mm;">
             </td>
             <td style='width: 50%; vertical-align: bottom; padding: 20px;'>
                 &nbsp; Année universitaire: <?php echo($anneeUniversitaire.' - '.((int)$anneeUniversitaire+1)) ?>

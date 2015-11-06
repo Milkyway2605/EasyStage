@@ -1,10 +1,10 @@
 <?php
-include_once '../Authentification/Base/layout_head_01.php';
+include_once 'Authentification/Base/layout_head_01.php';
 ?>
 
 <?php
-include_once '../Authentification/Base/layout_head_02.php';
-include_once '../Authentification/Base/layout_content_01.php';
+include_once 'Authentification/Base/layout_head_02.php';
+include_once 'Authentification/Base/layout_content_01.php';
 ?>
                     <p id='signupInformation' class='alert-info'>Vous avez demandé la réinitialisation
                     de votre mot de passe. Veuillez saisir votre nouveau mot de passe
@@ -30,10 +30,10 @@ include_once '../Authentification/Base/layout_content_01.php';
                     </form>
 
 <?php
-include_once '../Authentification/Base/layout_content_02.php';
-include_once '../Authentification/Base/layout_baseJavascript.php';
+include_once 'Authentification/Base/layout_content_02.php';
+include_once 'Authentification/Base/layout_baseJavascript.php';
 ?>
     
 <?php
-include_once '../Authentification/Base/layout_endPage.php';
+include_once 'Authentification/Base/layout_endPage.php';
 ?>

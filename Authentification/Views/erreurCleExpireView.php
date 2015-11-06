@@ -1,10 +1,10 @@
 <?php
-include_once '../Authentification/Base/layout_head_01.php';
+include_once 'Authentification/Base/layout_head_01.php';
 ?>
 
 <?php
-include_once '../Authentification/Base/layout_head_02.php';
-include_once '../Authentification/Base/layout_content_01.php';
+include_once 'Authentification/Base/layout_head_02.php';
+include_once 'Authentification/Base/layout_content_01.php';
 ?>                        
 
                     <p id="passwordInstruction" class="alert-danger">
@@ -15,10 +15,10 @@ include_once '../Authentification/Base/layout_content_01.php';
                     </a>
 
 <?php
-include_once '../Authentification/Base/layout_content_02.php';
-include_once '../Authentification/Base/layout_baseJavascript.php';
+include_once 'Authentification/Base/layout_content_02.php';
+include_once 'Authentification/Base/layout_baseJavascript.php';
 ?>
     
 <?php
-include_once '../Authentification/Base/layout_endPage.php';
+include_once 'Authentification/Base/layout_endPage.php';
 ?>

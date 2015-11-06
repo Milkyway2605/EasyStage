@@ -1,6 +1,6 @@
 <?php
-include_once '../Modeles/accesBDD.php';
-include_once '../Modeles/accesUtilisateurs.php';
+include_once 'Modeles/accesBDD.php';
+include_once 'Modeles/accesUtilisateurs.php';
 
 $connexion = getConnexion();
 
@@ -15,13 +15,13 @@ if(isset($_POST['password']) == true)
     {
         setPassword($email, $password, $connexion);
         setCle($email, null, null, $connexion);
-        include_once '../Authentification/Views/passwordResetSuccessView.php';
+        include_once 'Authentification/Views/passwordResetSuccessView.php';
         session_destroy();
         unset($_SESSION);
     }
     else
     {
-        include_once '../Authentification/Views/passwordResetErrorView.php';
+        include_once 'Authentification/Views/passwordResetErrorView.php';
     }
 
 }
@@ -40,17 +40,17 @@ if(isset($_GET['email']))
         {
             session_start();
             $_SESSION['email'] = $email;
-            include_once '../Authentification/Views/passwordResetView.php';
+            include_once 'Authentification/Views/passwordResetView.php';
         }
         else
         {
             setCle($email, null, null, $connexion);
-            include_once '../Authentification/Views/erreurCleExpireView.php';
+            include_once 'Authentification/Views/erreurCleExpireView.php';
         }
     }
     
     else
     {
-        include_once '../Authentification/Views/erreurCleInvalideView.php';
+        include_once 'Authentification/Views/erreurCleInvalideView.php';
     }
 }

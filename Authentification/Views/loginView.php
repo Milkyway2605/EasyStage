@@ -7,7 +7,7 @@ include_once 'Authentification/Base/layout_head_02.php';
 include_once 'Authentification/Base/layout_content_01.php';
 ?>
 
-                    <form method="POST" action="connexion.html">
+                    <form method="POST" action="index.php">
                         <div class="input-group">
                             <input type='email' id="email" name="email" class='
                             form-control' placeholder="E-mail" required="true">

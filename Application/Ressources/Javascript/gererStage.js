@@ -10,7 +10,7 @@ $('.confirm').click(function()
     $.ajax(
     {
         type: 'get',
-        url: '../Application/Features/modifieStatut.php',
+        url: 'Application/Features/modifieStatut.php',
         data: {statut: 1, id: id, email: email},
         success: function() 
         {
@@ -43,7 +43,7 @@ $('.refuse').click(function()
     $.ajax(
     {
         type: 'get',
-        url: '../Application/Features/modifieStatut.php',
+        url: 'Application/Features/modifieStatut.php',
         data: {statut: -1, id: id, email: email},
         success: function() 
         {

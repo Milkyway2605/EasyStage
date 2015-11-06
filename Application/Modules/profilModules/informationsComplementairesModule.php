@@ -6,9 +6,9 @@
             <div class='panel-body' id="informationsComplementairesContainer">
                 
                 <?php
-                    include_once '../Application/Modules/profilModules/InformationsComplementairesBricks/telephoneBrick.php';
-                    include_once '../Application/Modules/profilModules/InformationsComplementairesBricks/adresseBrick.php';
-                    include_once '../Application/Modules/profilModules/InformationsComplementairesBricks/villeBrick.php';
+                    include_once 'Application/Modules/profilModules/InformationsComplementairesBricks/telephoneBrick.php';
+                    include_once 'Application/Modules/profilModules/InformationsComplementairesBricks/adresseBrick.php';
+                    include_once 'Application/Modules/profilModules/InformationsComplementairesBricks/villeBrick.php';
                 ?>
                 
             </div>

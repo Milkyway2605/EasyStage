@@ -1,13 +1,13 @@
 <?php
-include_once '../Authentification/Base/layout_head_01.php';
+include_once 'Authentification/Base/layout_head_01.php';
 ?>
 
 <?php
-include_once '../Authentification/Base/layout_head_02.php';
-include_once '../Authentification/Base/layout_content_01.php';
+include_once 'Authentification/Base/layout_head_02.php';
+include_once 'Authentification/Base/layout_content_01.php';
 ?>
                     <p id='loginError'>Email ou mot de passe incorrect</p>
-                    <form method="POST" action="connexion.php">
+                    <form method="POST" action="index.php">
                         <div class="input-group">
                             <input type='email' id="email" name="email" class='
                             form-control' placeholder="E-mail" required="true">
@@ -32,10 +32,10 @@ include_once '../Authentification/Base/layout_content_01.php';
                 </div>
 
 <?php
-include_once '../Authentification/Base/layout_content_02.php';
-include_once '../Authentification/Base/layout_baseJavascript.php';
+include_once 'Authentification/Base/layout_content_02.php';
+include_once 'Authentification/Base/layout_baseJavascript.php';
 ?>
     
 <?php
-include_once '../Authentification/Base/layout_endPage.php';
+include_once 'Authentification/Base/layout_endPage.php';
 ?>

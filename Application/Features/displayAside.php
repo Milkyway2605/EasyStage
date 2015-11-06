@@ -7,25 +7,25 @@
  */
 function displayAside($userType, $activeCategory)
 {
-    include_once '../Application/Base/layout_aside_01.php';
+    include_once 'Application/Base/layout_aside_01.php';
     
-    $navigationPrincipale = '../Application/Base/AsideModules/navigationPrincipaleCategory.php';
-    $accueil = '../Application/Base/AsideModules/accueil.php';
-    $accueilActive = '../Application/Base/AsideModules/accueilActive.php';
-    $profil = '../Application/Base/AsideModules/profil.php';
-    $profilActive = '../Application/Base/AsideModules/profilActive.php';
-    $gestion = '../Application/Base/AsideModules/gestionCategory.php';
-    $utilisateurs = '../Application/Base/AsideModules/utilisateurs.php';
-    $utilisateursActive = '../Application/Base/AsideModules/utilisateursActive.php';
-    $classes = '../Application/Base/AsideModules/classes.php';
-    $classesActive = '../Application/Base/AsideModules/classesActive.php';
-    $stages = '../Application/Base/AsideModules/stages.php';
-    $stagesActive = '../Application/Base/AsideModules/stagesActive.php';
-    $autres = '../Application/Base/AsideModules/autresCategory.php';
-    $annuaire = '../Application/Base/AsideModules/annuaire.php';
-    $annuaireActive = '../Application/Base/AsideModules/annuaireActive.php';
-    $etudiants = '../Application/Base/AsideModules/etudiants.php';
-    $etudiantsActive = '../Application/Base/AsideModules/etudiantsActive.php';
+    $navigationPrincipale = 'Application/Base/AsideModules/navigationPrincipaleCategory.php';
+    $accueil = 'Application/Base/AsideModules/accueil.php';
+    $accueilActive = 'Application/Base/AsideModules/accueilActive.php';
+    $profil = 'Application/Base/AsideModules/profil.php';
+    $profilActive = 'Application/Base/AsideModules/profilActive.php';
+    $gestion = 'Application/Base/AsideModules/gestionCategory.php';
+    $utilisateurs = 'Application/Base/AsideModules/utilisateurs.php';
+    $utilisateursActive = 'Application/Base/AsideModules/utilisateursActive.php';
+    $classes = 'Application/Base/AsideModules/classes.php';
+    $classesActive = 'Application/Base/AsideModules/classesActive.php';
+    $stages = 'Application/Base/AsideModules/stages.php';
+    $stagesActive = 'Application/Base/AsideModules/stagesActive.php';
+    $autres = 'Application/Base/AsideModules/autresCategory.php';
+    $annuaire = 'Application/Base/AsideModules/annuaire.php';
+    $annuaireActive = 'Application/Base/AsideModules/annuaireActive.php';
+    $etudiants = 'Application/Base/AsideModules/etudiants.php';
+    $etudiantsActive = 'Application/Base/AsideModules/etudiantsActive.php';
     
     
     switch($userType)
@@ -289,5 +289,5 @@ function displayAside($userType, $activeCategory)
             break;
     }
     
-        include_once '../Application/Base/layout_aside_02.php';
+        include_once 'Application/Base/layout_aside_02.php';
 }

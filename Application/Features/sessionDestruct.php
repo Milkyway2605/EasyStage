@@ -8,7 +8,7 @@ function sessionDestruct()
     session_start();
     session_destroy();
     unset($_SESSION);
-    header('location: ../../Controller/connexion.php');
+    header('location: ../../index.php');
     exit;
 }
 

@@ -1,22 +1,22 @@
 <?php
-include_once '../Application/Base/layout_head_01.php';
+include_once 'Application/Base/layout_head_01.php';
 ?>
 
-<link href="../Application/Ressources/CSS/utilisateursStyle.css" rel="stylesheet" type="text/css"/>
+<link href="Application/Ressources/CSS/utilisateursStyle.css" rel="stylesheet" type="text/css"/>
 
 <?php
-include_once '../Application/Base/layout_head_02.php';
-include_once '../Application/Base/layout_header.php';
-include_once '../Application/Features/displayAside.php';
+include_once 'Application/Base/layout_head_02.php';
+include_once 'Application/Base/layout_header.php';
+include_once 'Application/Features/displayAside.php';
 echo(displayAside($_SESSION['codeUtilisateur'], 'utilisateurs'));
-include_once '../Application/Base/layout_content_01.php';
+include_once 'Application/Base/layout_content_01.php';
 ?>
     
     Utilisateurs
     <small>Créer et gérer des utilisateurs</small>
 
 <?php
-include_once '../Application/Base/layout_content_02.php';
+include_once 'Application/Base/layout_content_02.php';
 ?>
     
     <article class="col-md-10 col-md-offset-1">
@@ -103,12 +103,12 @@ include_once '../Application/Base/layout_content_02.php';
     </article>
     
 <?php
-include_once '../Application/Base/layout_content_03.php';
-include_once '../Application/Base/layout_footer.php';
-include_once '../Application/Base/layout_baseJavascript.php';
+include_once 'Application/Base/layout_content_03.php';
+include_once 'Application/Base/layout_footer.php';
+include_once 'Application/Base/layout_baseJavascript.php';
 ?>
 
 <?php
-include_once '../Application/Base/layout_endPage.php';
+include_once 'Application/Base/layout_endPage.php';
 ?>
 

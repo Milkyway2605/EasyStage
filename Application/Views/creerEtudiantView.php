@@ -1,23 +1,23 @@
 <?php
-include_once '../Application/Base/layout_head_01.php';
+include_once 'Application/Base/layout_head_01.php';
 ?>
 
-<link href="../Application/Ressources/CSS/utilisateursStyle.css" rel="stylesheet" type="text/css"/>
-<link href="../Application/Ressources/CSS/utilisateursResponsive.css" rel="stylesheet" type="text/css"/>
+<link href="Application/Ressources/CSS/utilisateursStyle.css" rel="stylesheet" type="text/css"/>
+<link href="Application/Ressources/CSS/utilisateursResponsive.css" rel="stylesheet" type="text/css"/>
 
 <?php
-include_once '../Application/Base/layout_head_02.php';
-include_once '../Application/Base/layout_header.php';
-include_once '../Application/Features/displayAside.php';
+include_once 'Application/Base/layout_head_02.php';
+include_once 'Application/Base/layout_header.php';
+include_once 'Application/Features/displayAside.php';
 echo(displayAside($_SESSION['codeUtilisateur'], 'utilisateurs'));
-include_once '../Application/Base/layout_content_01.php';
+include_once 'Application/Base/layout_content_01.php';
 ?>
     
     Etudiants
     <small>Créer un étudiant</small>
 
 <?php
-include_once '../Application/Base/layout_content_02.php';
+include_once 'Application/Base/layout_content_02.php';
 ?>
 
 <?php
@@ -74,10 +74,10 @@ include_once '../Application/Base/layout_content_02.php';
                     
                     <?php
 
-                        include_once '../Application/Modules/creerEtudiantModules/informationsCompteModule.php';
-                        include_once '../Application/Modules/creerEtudiantModules/informationsPersonnellesModule.php';
-                        include_once '../Application/Modules/creerEtudiantModules/coordonneesModule.php';
-                        include_once '../Application/Modules/creerEtudiantModules/choixClasseModule.php';
+                        include_once 'Application/Modules/creerEtudiantModules/informationsCompteModule.php';
+                        include_once 'Application/Modules/creerEtudiantModules/informationsPersonnellesModule.php';
+                        include_once 'Application/Modules/creerEtudiantModules/coordonneesModule.php';
+                        include_once 'Application/Modules/creerEtudiantModules/choixClasseModule.php';
                     ?>                 
 
                 </div>
@@ -97,12 +97,12 @@ include_once '../Application/Base/layout_content_02.php';
 </article>
     
 <?php
-include_once '../Application/Base/layout_content_03.php';
-include_once '../Application/Base/layout_footer.php';
-include_once '../Application/Base/layout_baseJavascript.php';
+include_once 'Application/Base/layout_content_03.php';
+include_once 'Application/Base/layout_footer.php';
+include_once 'Application/Base/layout_baseJavascript.php';
 ?>
-<script src="../Application/Ressources/Javascript/creationEtudiantScript.js" type="text/javascript"></script>
+<script src="Application/Ressources/Javascript/creationEtudiantScript.js" type="text/javascript"></script>
 <?php
-include_once '../Application/Base/layout_endPage.php';
+include_once 'Application/Base/layout_endPage.php';
 ?>
 

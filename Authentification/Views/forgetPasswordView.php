@@ -1,10 +1,10 @@
 <?php
-include_once '../Authentification/Base/layout_head_01.php';
+include_once 'Authentification/Base/layout_head_01.php';
 ?>
 
 <?php
-include_once '../Authentification/Base/layout_head_02.php';
-include_once '../Authentification/Base/layout_content_01.php';
+include_once 'Authentification/Base/layout_head_02.php';
+include_once 'Authentification/Base/layout_content_01.php';
 ?>                        
                     <?php
                         if(isset($emailExistant))
@@ -15,7 +15,7 @@ include_once '../Authentification/Base/layout_content_01.php';
                                     Un lien de récupération de mot de passe vous a été envoyé à l\'adresse email saisie.
                                     Merci de consulter votre courriel indésirable en cas de non-réception du mail.
                                     </p>
-                                    <a href="http://easystage.malrauxbethune.fr" class="btn">
+                                    <a href="index.php" class="btn">
                                         Retour à l\'accueil
                                     </a>');
                             }
@@ -57,10 +57,10 @@ include_once '../Authentification/Base/layout_content_01.php';
                     ?>
 
 <?php
-include_once '../Authentification/Base/layout_content_02.php';
-include_once '../Authentification/Base/layout_baseJavascript.php';
+include_once 'Authentification/Base/layout_content_02.php';
+include_once 'Authentification/Base/layout_baseJavascript.php';
 ?>
     
 <?php
-include_once '../Authentification/Base/layout_endPage.php';
+include_once 'Authentification/Base/layout_endPage.php';
 ?>

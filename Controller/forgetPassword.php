@@ -1,7 +1,7 @@
 <?php
-include_once '../Modeles/accesBDD.php';
-include_once '../Modeles/accesUtilisateurs.php';
-include_once '../Application/Features/cryptage.php';
+include_once 'Modeles/accesBDD.php';
+include_once 'Modeles/accesUtilisateurs.php';
+include_once 'Application/Features/cryptage.php';
 
 $connexion = getConnexion();
 
@@ -41,7 +41,7 @@ if(isset($_POST['email']))
                                 Après quoi, il sera rendu inutilisable.</p>
                             <p>En cas de problème avec la réinitialisation de mot de passe, merci de contacter un administrateur.</p>
                             </div>
-                            <a href="http://sio2.malrauxbethune.fr/easystage/Controller/passwordReset.php?email='.$email.'&cle='.$cle.'" style="text-decoration: none; cursor: pointer; background-color: #466FC1; color: #FFF; display: inline-block; padding: 6px 12px; margin-bottom: 0px; font-size: 14px; font-weight: 400; line-height: 1.42857; text-align: center; white-space: nowrap; vertical-align: middle; -moz-user-select: none; background-image: none; border: 1px solid transparent; border-radius: 4px;">
+                            <a href="http://localhost/EasyStage/passwordReset.php?email='.$email.'&cle='.$cle.'" style="text-decoration: none; cursor: pointer; background-color: #466FC1; color: #FFF; display: inline-block; padding: 6px 12px; margin-bottom: 0px; font-size: 14px; font-weight: 400; line-height: 1.42857; text-align: center; white-space: nowrap; vertical-align: middle; -moz-user-select: none; background-image: none; border: 1px solid transparent; border-radius: 4px;">
                                 Réinitialiser mon mot de passe
                             </a>
                         </div>
@@ -54,4 +54,4 @@ if(isset($_POST['email']))
     }
 }
 
-include_once '../Authentification/Views/forgetPasswordView.php';
+include_once 'Authentification/Views/forgetPasswordView.php';

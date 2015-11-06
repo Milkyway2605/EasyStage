@@ -1,23 +1,23 @@
 <?php
-include_once '../Application/Base/layout_head_01.php';
+include_once 'Application/Base/layout_head_01.php';
 ?>
 
-<link href="../Application/Ressources/CSS/stagesStyle.css" rel="stylesheet" type="text/css"/>
-<link href="../Application/Ressources/CSS/stagesResponsive.css" rel="stylesheet" type="text/css"/>
+<link href="Application/Ressources/CSS/stagesStyle.css" rel="stylesheet" type="text/css"/>
+<link href="Application/Ressources/CSS/stagesResponsive.css" rel="stylesheet" type="text/css"/>
 
 <?php
-include_once '../Application/Base/layout_head_02.php';
-include_once '../Application/Base/layout_header.php';
-include_once '../Application/Features/displayAside.php';
+include_once 'Application/Base/layout_head_02.php';
+include_once 'Application/Base/layout_header.php';
+include_once 'Application/Features/displayAside.php';
 echo(displayAside($_SESSION['codeUtilisateur'], 'stages'));
-include_once '../Application/Base/layout_content_01.php';
+include_once 'Application/Base/layout_content_01.php';
 ?>
     
     Création d'un stage
     <small>Remplir les champs pour créer un stage.</small>
 
 <?php
-include_once '../Application/Base/layout_content_02.php';
+include_once 'Application/Base/layout_content_02.php';
 ?>
     
 <?php
@@ -80,11 +80,11 @@ include_once '../Application/Base/layout_content_02.php';
                     
                     <?php
                     
-                        include_once '../Application/Modules/creerStageModules/sujetStageModule.php';
-                        include_once '../Application/Modules/creerStageModules/renseignementOrganismeModule.php';
-                        include_once '../Application/Modules/creerStageModules/renseignementSignataireModule.php';
-                        include_once '../Application/Modules/creerStageModules/renseignementTuteurModule.php';
-                        include_once '../Application/Modules/creerStageModules/choixProfesseurModule.php';
+                        include_once 'Application/Modules/creerStageModules/sujetStageModule.php';
+                        include_once 'Application/Modules/creerStageModules/renseignementOrganismeModule.php';
+                        include_once 'Application/Modules/creerStageModules/renseignementSignataireModule.php';
+                        include_once 'Application/Modules/creerStageModules/renseignementTuteurModule.php';
+                        include_once 'Application/Modules/creerStageModules/choixProfesseurModule.php';
                         
                     ?>
                     
@@ -105,11 +105,11 @@ include_once '../Application/Base/layout_content_02.php';
 </article>
     
 <?php
-include_once '../Application/Base/layout_content_03.php';
-include_once '../Application/Base/layout_footer.php';
-include_once '../Application/Base/layout_baseJavascript.php';
+include_once 'Application/Base/layout_content_03.php';
+include_once 'Application/Base/layout_footer.php';
+include_once 'Application/Base/layout_baseJavascript.php';
 ?>
-<script src="../Application/Ressources/Javascript/creationStageScript.js" type="text/javascript"></script>
+<script src="Application/Ressources/Javascript/creationStageScript.js" type="text/javascript"></script>
 <?php
-include_once '../Application/Base/layout_endPage.php';
+include_once 'Application/Base/layout_endPage.php';
 ?>
