@@ -1,0 +1,3 @@
+v1.01
+
+Correction d'une erreur lors de la création d'un stage. La création échoué lorsque l'utilisateur sélectionnait un signataire existant et cochait l'option tuteur identique.

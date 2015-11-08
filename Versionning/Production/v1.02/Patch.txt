@@ -1,0 +1,3 @@
+v1.02
+
+Correction d'une faille de sécurité permettant d'accéder aux pages des autres groupes normalement inaccessibles. 

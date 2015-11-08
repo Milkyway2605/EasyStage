@@ -1,5 +1,7 @@
 Options +FollowSymLinks
-RewriteEngine On 
+RewriteEngine On
 RewriteBase /EasyStage/
+
+RewriteRule ^index\.php$ - [L]
 RewriteRule ^index\.html$ index.php?page=/
-RewriteRule ^([a-zA-Z0-9-]*\.php)$ index.php?page=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9-]+\.php)$ index.php?page=$1 [L,QSA]

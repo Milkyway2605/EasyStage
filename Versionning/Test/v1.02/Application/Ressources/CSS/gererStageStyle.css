@@ -1,0 +1,85 @@
+  table {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  table tr {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+  table th, table td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  table th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+ 
+#validationStage
+{
+    min-height: 320px;
+}
+
+.tab-pane
+{
+    padding: 10px 0 10px 10px;
+}
+
+.container-fluid
+{
+    padding: 0;
+}
+
+tbody > tr:nth-of-type(2n) {
+    background-color: #F9F9F9;
+}
+
+.label
+{
+    padding: 4px 15px;
+}
+
+.fa-check-circle
+{
+    color: #18A689;
+    margin: 0 3px;
+}
+
+.fa-check-circle:active
+{
+    color: #127C65;
+}
+
+.fa-times-circle
+{
+    color: #860B0B;
+    margin: 0 3px;
+}
+
+.fa-times-circle:active
+{
+    color: #630707;
+}
+
+.fa-lg 
+{
+    font-size: 1.5em;
+    line-height: 0.80em;
+    vertical-align: -15%;
+}
+
+button
+{
+    border: none;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}

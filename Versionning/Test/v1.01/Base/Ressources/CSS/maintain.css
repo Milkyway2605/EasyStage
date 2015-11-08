@@ -1,0 +1,43 @@
+/*COULEUR PRINCIPALE THEME*/
+
+@media screen and (min-width: 768px)
+{
+    .pageContainer nav
+    {
+        background-color: #466FC1;
+    }
+    
+    .pageContainer nav .navbarBody
+    {
+        background-color: #466FC1;
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    .pageContainer nav .navbarBody a.icon
+    {
+        color: #466FC1;
+    }
+}
+
+.pageContainer aside .panel ul li.active
+{
+    border-left-color: #466FC1;
+    border-radius: 0;
+}
+
+.pageContainer nav .navbarHeader
+{
+    background-color: #466FC1;
+}
+
+.pageContainer aside .panel ul li a:hover,
+.pageContainer aside .panel ul li a:active,
+.pageContainer aside .panel ul li a:focus,
+.pageContainer aside .panel ul li.active a
+{
+    background-color: transparent;
+    color: #466FC1;
+    outline: none;
+}
