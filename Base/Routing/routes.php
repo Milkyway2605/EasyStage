@@ -13,4 +13,5 @@ $fmk->initRoute("passwordReset", "passwordReset.php", "Controller/passwordReset.
 $fmk->initRoute("forgetPassword", "forgetPassword.php", "Controller/forgetPassword.php", "index");
 $fmk->initRoute("creerEtudiant", "creerEtudiant.php", "Controller/creerEtudiant.php", "index");
 $fmk->initRoute("gererStage", "gererStage.php", "Controller/gererStage.php", "index");
+$fmk->initRoute("classes", "classes.php", "Controller/classes.php", "index");
 

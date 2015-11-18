@@ -30,7 +30,7 @@ include_once 'Application/Base/layout_content_02.php';
             <?php            
                 include_once 'Application/Modules/gererMonStageModules/mesStagesModule.php';            
             ?>
-            
+        
         </div>
     </div>
 </article>
@@ -40,7 +40,58 @@ include_once 'Application/Base/layout_content_03.php';
 include_once 'Application/Base/layout_footer.php';
 include_once 'Application/Base/layout_baseJavascript.php';
 ?>
-    
+    <div class="modal" id="modificationStage">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modification du stage </h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        
+                        <legend>Sujet de stage</legend>
+                        <div class="form-group">
+                            <label for="libelleStage">Libelle : </label>
+                            <input id="libelleStage" name="libelleStage" type="text" 
+                            class="form-control" required="true"
+                            placeholder="ex : Développement d'un site web, maintenance d'un serveur ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptifStage">Descriptif : </label>
+                            <textarea id="descriptifStage" name="descriptifStage"
+                            type="textarea" class="form-control" required
+                            placeholder="Renseigner une brève description de votre stage"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="periodeStage">Période : </label>
+                            <select id="periodeStage" name="periodeStage" class="form-control" required>
+                                <?php
+                                
+//                                    $lesPeriodes = getLesPeriodes($codeClasse, $anneeScolaire, $connexion);
+//                                    
+//                                    foreach($lesPeriodes as $unePeriode)
+//                                    {
+//                                        $dateDebut = dateAnglaisVersFrancais($unePeriode['dateDebut']);
+//                                        $dateFin = dateAnglaisVersFrancais($unePeriode['dateFin']);
+//                                        echo('<option value="'.$unePeriode['codePeriode'].'">Du '.$dateDebut.' jusqu\'au '.$dateFin.'</option>');
+//                                    }
+                                
+                                ?>
+                            </select>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal">
+                            Fermer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="Application/Ressources/Javascript/gererMesStages.js" type="text/javascript"></script>
     
 <?php

@@ -13,10 +13,16 @@
         
         echo('<div class="panel">');
         
-        echo('  <div class="panel-heading row"> 
-                    <a href="#stage'.$i.'" data-parent="#mesStages" data-toggle="collapse">
-                        '.$unStage['libelle'].'
-                    </a> 
+        echo('  <div class="panel-heading row">
+                    <div class="col-xs-6">
+                        <a href="#stage'.$i.'" data-parent="#mesStages" data-toggle="collapse">
+                            '.$unStage['libelle'].'
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a data-toggle="modal" href="#modificationStage" 
+                        class="fa fa-pencil pull-right"></a>
+                    </div>
                 </div>');
         echo('  <div id="stage'.$i.'" class="panel-collapse collapse">');
         echo('      <div class="panel-body">');

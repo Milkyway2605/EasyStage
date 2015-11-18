@@ -32,11 +32,6 @@ input[data-provide="datepicker"][readonly]
     background-color: transparent;
 }
 
-a
-{
-    outline: none;
-}
-
 .form-control, .input-group-addon
 {
     border-radius: 2px;
@@ -82,5 +77,4 @@ label
     color: white;
     border : none;
 }
-
 /*rgba(70, 111, 193, 0.65);*/

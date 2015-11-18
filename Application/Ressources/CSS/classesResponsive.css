@@ -1,0 +1,9 @@
+
+
+@media screen and (max-width: 418px) {
+
+    .checkbox-inline + .checkbox-inline
+    {
+        margin-left: 0;
+    }
+}
