@@ -9,4 +9,3 @@ function getSection($connexion)
     
     return $resultat;
 }
-
