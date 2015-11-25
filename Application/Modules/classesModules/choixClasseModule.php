@@ -9,10 +9,18 @@
                     <label for="annee">Année :</label>
                     <select id="annee" name="annee" class="form-control" required>
                         <?php
-                        
+                            $i = 1;
                             foreach($lesAnnees as $uneAnnee)
                             {
-                                echo('<option value="'.$uneAnnee['anneeScolaire'].'">'.$uneAnnee['anneeScolaire'].'</option>');
+                                if($i == 1)
+                                {
+                                    $selected = "selected";
+                                }
+                                else
+                                {
+                                    $selected = "";
+                                }
+                                echo('<option '.$selected.' value="'.$uneAnnee['anneeScolaire'].'">'.$uneAnnee['anneeScolaire'].'</option>');
                             }
                                 
                         ?>

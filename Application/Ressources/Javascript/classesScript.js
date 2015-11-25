@@ -1,35 +1,15 @@
-changeAnnee();
+changeSection();
+changeNiveau();
 
-//function changeNiveau()
-//{
-//    var nbNiveau = parseInt($('#section option:selected').attr('data-nbNiveau'));
-//    var suffixe = "ère";
-//
-//    for(var i = 1 ; i < nbNiveau + 1 ; i++)
-//    {
-//        if( i !== 1)
-//        {
-//            suffixe = "ème";
-//        }
-//        $('#niveau').append('<option value="'+ i +'">'+ i + suffixe +' année</option>');
-//    }
-//}
-//
-//$('#section').change(function()
-//{
-//    $('#niveau').empty();
-//    changeNiveau();
-//});
-
-function changeAnnee()
+function changeSection()
 {
     var annee = parseInt($('#annee option:selected').val());
     
     $.ajax(
     {
-        url: 'Application/Features/modifieStatut.php',
-        type: 'get',        
-        data: {id : annee},
+        url: 'Application/Features/donneSectionSelonAnnee.php',
+        type: 'post',        
+        data: {anneeScolaire : annee},
         dataType : 'html',
         success: function(data) 
         {
@@ -41,5 +21,29 @@ function changeAnnee()
 $('#annee').change(function()
 {
     $('#section').empty();
-    changeAnnee();
+    changeSection();
+});
+
+function changeNiveau()
+{
+    var annee = parseInt($('#annee option:selected').val());
+    var codeSection = $('#section option:first-child').val();
+    
+    $.ajax(
+    {
+        url: 'Application/Features/donneNiveauSelonSectionEtAnnee.php',
+        type: 'post',        
+        data: {anneeScolaire : annee, codeSection: codeSection},
+        dataType : 'html',
+        success: function(data) 
+        {
+           $('#niveau').html(data);
+        }
+    });
+}
+
+$('#section').change(function()
+{
+    $('#niveau').empty();
+    changeNiveau();
 });

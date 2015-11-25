@@ -16,14 +16,14 @@ function getLesAnnees($emailEnseignant,$connexion)
 
 function getLesSection($emailEnseignant,$annee,$connexion)
 {
-    $req = $connexion->prepare('SELECT DISTINCT(codeSection), libelleSection '
+    $req = $connexion->prepare('SELECT DISTINCT(s.codeSection), libelleSection '
             . 'FROM section s '
             . 'INNER JOIN classe c '
             . 'ON s.codeSection = c.codeSection '
             . 'INNER JOIN historique h '
             . 'ON c.codeClasse = h.codeClasse '
             . 'WHERE emailEnseignant = :emailEnseignant '
-            . 'AND anneeScolaire = :annee');
+            . 'AND anneeScolaire = :anneeScolaire');
     
     $req->bindValue(':emailEnseignant',$emailEnseignant);
     $req->bindValue(':anneeScolaire',$annee);
