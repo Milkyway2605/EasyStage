@@ -16,7 +16,7 @@
     <?php
         if($_SESSION['typeUtilisateur'] == 'Etudiant')
         {
-            echo('<ul id="stagesList" class="nav collapse submenu">
+            echo('<ul id="stagesList" class="nav collapse in submenu">
                     <li><a href="creerStage.php">Création</a></li>
                     <li>
                         <a href="gererMonStage.php">
