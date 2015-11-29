@@ -4,6 +4,8 @@ include_once 'Application/Base/layout_head_01.php';
 
 <link href="Application/Ressources/CSS/historiqueStagesStyle.css" rel="stylesheet" type="text/css"/>
 <link href="Application/Ressources/CSS/historiqueStagesResponsive.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="Base/Ressources/DataTables/DataTables-1.10.10/css/dataTables.bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="Base/Ressources/DataTables/Responsive-2.0.0/css/responsive.bootstrap.css"/>
 
 <?php
 include_once 'Application/Base/layout_head_02.php';
@@ -27,18 +29,47 @@ include_once 'Application/Base/layout_content_02.php';
         </div>
         <div class="panel-body">
             <form class="form-inline">
+                <p class="filtre">Filtres :</p>
                 <fieldset>
-                    <label for="EtudiantAvecStages" class="checkbox-inline">
-                        <input type="checkbox" name="EtudiantAvecStages" id="EtudiantAvecStages">
-                        Etudiants avec stages
+                <div class="col-lg-12">
+                    <label for="section">Section : 
+                        <select id="section">
+                            <option value="">Toutes</option>
+                            <option value="SIO">SIO</option>
+                            <option value="MUC">MUC</option>
+                        </select>
                     </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox"> 
-                        Etudiants sans stages
+                    
+                    <label for="niveau">Niveau : 
+                        <select id="niveau">
+                            <option value="">Tous</option>
+                            <option value="1">1ère annéee</option>
+                            <option value="2">2ème annéee</option>
+                        </select>
+                    </label>
+                    
+                    <label for="anneee">Année : 
+                        <select id="anneee">
+                            <option value="">Toutes</option>
+                            <option value="SIO">2015</option>
+                            <option value="MUC">2014</option>
+                        </select>
+                    </label>
+                    
+                    <label for="stage">Stage : 
+                        <select id="stage">
+                            <option value="">Tous</option>
+                            <option value="Oui">Avec</option>
+                            <option value="Non">Sans</option>
+                        </select>
                     </label>
                     <button class="fa fa-print pull-right">
                     </button>
+                </div>
                 </fieldset>
+                <?php
+                include_once 'Application/Modules/historiqueStagesModules/listeStagesModule.php';
+                ?>
             </form>
         </div>
     </div>
@@ -49,7 +80,10 @@ include_once 'Application/Base/layout_content_03.php';
 include_once 'Application/Base/layout_footer.php';
 include_once 'Application/Base/layout_baseJavascript.php';
 ?>
-    
+    <script type="text/javascript" src="Base/Ressources/DataTables/DataTables-1.10.10/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="Base/Ressources/DataTables/DataTables-1.10.10/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="Base/Ressources/DataTables/Responsive-2.0.0/js/dataTables.responsive.js"></script>
+    <script src="Application/Ressources/Javascript/historiqueStagesScript.js" type="text/javascript"></script>
 <?php
 include_once 'Application/Modules/classesModules/modalModifyPeriodeModule.php';
 include_once 'Application/Modules/classesModules/modalAddPeriodeModule.php';

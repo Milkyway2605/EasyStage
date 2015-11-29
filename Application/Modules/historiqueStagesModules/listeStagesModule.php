@@ -1,4 +1,4 @@
-<table>
+<table id="listeStages">
     <thead>
         <tr>
             <th>Nom</th>
@@ -7,6 +7,7 @@
             <th>Adresse</th>
             <th>Téléphone</th>
             <th>Email</th>
+            <th class="hide">Section</th>
         </tr>
     </thead>
     <tbody>
@@ -16,7 +17,7 @@
                     Lespagnol
                 </span>
             </td>     
-            <td data-label="Prenom" id="UKI4KfE2KHRcmDDNWo/0dYLNRvM6N5dEHJOB+PMMQ72w6LL957vamg==">
+            <td data-label="Prenom">
                 <span class="td-responsive">
                     Guillaume
                 </span>
@@ -41,6 +42,11 @@
                     guillaume.lespagnol26@gmail.com
                 </span>
             </td>
+            <td data-label="Email" class="hide">                                            
+                <span class="td-responsive">
+                    SIO
+                </span>
+            </td>
         </tr>
         <tr data-toggle="modal" href="#showEtudiant">
             <td data-label="Nom">
@@ -48,7 +54,7 @@
                     Lespagnol
                 </span>
             </td>     
-            <td data-label="Prenom" id="UKI4KfE2KHRcmDDNWo/0dYLNRvM6N5dEHJOB+PMMQ72w6LL957vamg==">
+            <td data-label="Prenom">
                 <span class="td-responsive">
                     Guillaume
                 </span>
@@ -71,6 +77,11 @@
             <td data-label="Email">                                            
                 <span class="td-responsive">
                     guillaume.lespagnol26@gmail.com
+                </span>
+            </td>
+            <td data-label="Email" class="hide">                                            
+                <span class="td-responsive">
+                    SIO
                 </span>
             </td>
         </tr>
