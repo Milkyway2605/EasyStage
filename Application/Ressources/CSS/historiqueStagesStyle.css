@@ -1,0 +1,11 @@
+input[type="checkbox"] 
+{
+    margin: 1px 0px 0px;
+}
+
+fieldset
+{
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    padding: 6px 12px;
+}

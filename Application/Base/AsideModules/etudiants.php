@@ -4,7 +4,7 @@
         Etudiants
     </a>      
     <ul id="etudiantList" class="nav collapse submenu">
-        <li><a href="#">Création</a></li>
-        <li><a href="#">Gestion</a></li>
+        <li><a href="creerEtudiant.php">Création</a></li>
+        <li><a href="#">Historique</a></li>
     </ul>
 </li>
