@@ -15,14 +15,18 @@ fieldset
     display: none;
 }
 
-label
-{
-    margin-bottom: 0;
-    margin-right: 15px;
-}
-
 .filtre
 {
     padding-left: 5px;
     margin-bottom: 5px;
+}
+
+label
+{
+    margin-bottom: 0;
+}
+
+.no-padding
+{
+    padding : 0;
 }

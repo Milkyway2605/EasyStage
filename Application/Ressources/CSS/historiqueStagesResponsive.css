@@ -59,4 +59,29 @@
       text-transform: uppercase;
       font-weight: bold;
     }
-  }
+}
+/*
+@media screen and (min-width: 768px)
+{
+    .retour-ligne
+    {
+        margin-left: 0;
+        margin-right: 0;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    
+    label
+    {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    .retour-ligne
+    {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}*/

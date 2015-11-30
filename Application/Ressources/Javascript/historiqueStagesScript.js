@@ -32,3 +32,18 @@ $('#section').change( function()
 { 
     oTable.fnFilter($(this).val());
 });
+
+$('#niveau').change( function() 
+{ 
+    oTable.fnFilter($(this).val());
+});
+
+$('#annee').change( function() 
+{ 
+    oTable.fnFilter($(this).val());
+});
+
+$('#stage').change( function() 
+{ 
+    oTable.fnFilter($(this).val());
+});

@@ -8,6 +8,9 @@
             <th>Téléphone</th>
             <th>Email</th>
             <th class="hide">Section</th>
+            <th class="hide">Classe</th>
+            <th class="hide">Année</th>
+            <th class="hide">Stage</th>
         </tr>
     </thead>
     <tbody>
@@ -42,10 +45,17 @@
                     guillaume.lespagnol26@gmail.com
                 </span>
             </td>
-            <td data-label="Email" class="hide">                                            
-                <span class="td-responsive">
-                    SIO
-                </span>
+            <td class="hide">                                            
+                SIO
+            </td>
+            <td class="hide">                                            
+                niveau2
+            </td>
+            <td class="hide">                                            
+                2014
+            </td>
+            <td class="hide">
+                Non
             </td>
         </tr>
         <tr data-toggle="modal" href="#showEtudiant">
@@ -79,10 +89,17 @@
                     guillaume.lespagnol26@gmail.com
                 </span>
             </td>
-            <td data-label="Email" class="hide">                                            
-                <span class="td-responsive">
-                    SIO
-                </span>
+            <td class="hide">                                            
+                SIO
+            </td>
+            <td class="hide">                                            
+                niveau1
+            </td>
+            <td class="hide">                                            
+                2014
+            </td>
+            <td class="hide">
+                Non
             </td>
         </tr>
     </tbody>

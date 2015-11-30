@@ -28,44 +28,40 @@ include_once 'Application/Base/layout_content_02.php';
             <div class="panel-title">Historique des stages</div>
         </div>
         <div class="panel-body">
-            <form class="form-inline">
+            <form>
                 <p class="filtre">Filtres :</p>
                 <fieldset>
-                <div class="col-lg-12">
-                    <label for="section">Section : 
+                    <div class="col-lg-10">
+                        <label for="section">Section : </label>
                         <select id="section">
-                            <option value="">Toutes</option>
-                            <option value="SIO">SIO</option>
-                            <option value="MUC">MUC</option>
+                                <option value="">Toutes</option>
+                                <option value="SIO">SIO</option>
+                                <option value="MUC">MUC</option>
                         </select>
-                    </label>
-                    
-                    <label for="niveau">Niveau : 
-                        <select id="niveau">
-                            <option value="">Tous</option>
-                            <option value="1">1ère annéee</option>
-                            <option value="2">2ème annéee</option>
-                        </select>
-                    </label>
-                    
-                    <label for="anneee">Année : 
-                        <select id="anneee">
-                            <option value="">Toutes</option>
-                            <option value="SIO">2015</option>
-                            <option value="MUC">2014</option>
-                        </select>
-                    </label>
-                    
-                    <label for="stage">Stage : 
-                        <select id="stage">
-                            <option value="">Tous</option>
-                            <option value="Oui">Avec</option>
-                            <option value="Non">Sans</option>
-                        </select>
-                    </label>
-                    <button class="fa fa-print pull-right">
-                    </button>
-                </div>
+                        <label for="niveau">Niveau : 
+                            <select id="niveau">
+                                <option value="">Tous</option>
+                                <option value="1">1ère annéee</option>
+                                <option value="2">2ème annéee</option>
+                            </select>
+                        </label>
+
+                        <label for="anneee">Année : 
+                            <select id="anneee">
+                                <option value="">Toutes</option>
+                                <option value="SIO">2015</option>
+                                <option value="MUC">2014</option>
+                            </select>
+                        </label>
+
+                        <label for="stage">Stage : 
+                            <select id="stage">
+                                <option value="">Tous</option>
+                                <option value="Oui">Avec</option>
+                                <option value="Non">Sans</option>
+                            </select>
+                        </label>
+                    </div>
                 </fieldset>
                 <?php
                 include_once 'Application/Modules/historiqueStagesModules/listeStagesModule.php';
