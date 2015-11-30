@@ -31,36 +31,37 @@ include_once 'Application/Base/layout_content_02.php';
             <form>
                 <p class="filtre">Filtres :</p>
                 <fieldset>
-                    <div class="col-lg-10">
-                        <label for="section">Section : </label>
-                        <select id="section">
+                    <div class="col-xs-12 col-md-3 col-lg-2 no-padding">
+                        <label for="section" class="col-xs-2 col-md-4 col-lg-4 no-padding">Section :</label>
+                        <select id="section" class="col-xs-10 col-md-7 no-padding">
                                 <option value="">Toutes</option>
                                 <option value="SIO">SIO</option>
                                 <option value="MUC">MUC</option>
                         </select>
-                        <label for="niveau">Niveau : 
-                            <select id="niveau">
-                                <option value="">Tous</option>
-                                <option value="1">1ère annéee</option>
-                                <option value="2">2ème annéee</option>
-                            </select>
-                        </label>
-
-                        <label for="anneee">Année : 
-                            <select id="anneee">
-                                <option value="">Toutes</option>
-                                <option value="SIO">2015</option>
-                                <option value="MUC">2014</option>
-                            </select>
-                        </label>
-
-                        <label for="stage">Stage : 
-                            <select id="stage">
-                                <option value="">Tous</option>
-                                <option value="Oui">Avec</option>
-                                <option value="Non">Sans</option>
-                            </select>
-                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-2 no-padding">
+                        <label for="niveau" class="col-xs-2 col-md-4 col-lg-4 no-padding">Niveau :</label>
+                        <select id="niveau" class="col-xs-10 col-md-7 no-padding">
+                            <option value="">Tous</option>
+                            <option value="1">1ère annéee</option>
+                            <option value="2">2ème annéee</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-2 no-padding">
+                        <label for="anneee" class="col-xs-2 col-md-4 col-lg-4 no-padding">Année :</label>
+                        <select id="anneee" class="col-xs-10 col-md-7 no-padding">
+                            <option value="">Toutes</option>
+                            <option value="SIO">2015</option>
+                            <option value="MUC">2014</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-2 no-padding">
+                        <label for="stage" class="col-xs-2 col-md-4 col-lg-4 no-padding">Stage :</label> 
+                        <select id="stage" class="col-xs-10 col-md-7 no-padding">
+                            <option value="">Tous</option>
+                            <option value="Oui">Avec</option>
+                            <option value="Non">Sans</option>
+                        </select>
                     </div>
                 </fieldset>
                 <?php
