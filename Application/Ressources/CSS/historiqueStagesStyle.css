@@ -25,3 +25,13 @@ fieldset
 {
     padding : 0;
 }
+
+select[disabled]
+{
+    color: #CCC;
+}
+
+table td, table th
+{
+    text-align: justify;
+}

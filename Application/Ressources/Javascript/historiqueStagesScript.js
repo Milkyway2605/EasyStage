@@ -1,5 +1,6 @@
 var oTable;
-oTable = $('#listeStages').dataTable(
+
+oTable = $('#listeStages').DataTable(
 {
     "info":        false,
     "paging":      false,
@@ -24,26 +25,60 @@ oTable = $('#listeStages').dataTable(
             sortAscending:  ": activer pour trier la colonne par ordre croissant",
             sortDescending: ": activer pour trier la colonne par ordre décroissant"
         }
+    }    
+});
+
+$('#select').change(function () {
+    oTable
+        .columns(1).search($('#stage option:selected').val()).draw();
+} );
+
+//$('#section').change( function() 
+//{ 
+//    oTable.fnFilter($(this).val());
+//});
+//
+//$('#classe').change( function() 
+//{ 
+//    oTable.fnFilter($(this).val());
+//});
+//
+//$('#annee').change( function() 
+//{ 
+//    oTable.fnFilter($(this).val());
+//});
+//
+//$('#stage').change( function() 
+//{ 
+//    oTable.fnFilter($(this).val());
+//});
+
+$('#section').change(function()
+{
+    if($('#section option:selected').val() !== "")
+    {
+        $('#classe').empty();
+        $('#classe').append('<option value="">Toutes</option>');
+        changeNiveau();
+        $('#classe').removeAttr('disabled');
     }
-    
+    else
+    {
+        $('#classe').attr('disabled','true');
+    }    
 });
 
-$('#section').change( function() 
-{ 
-    oTable.fnFilter($(this).val());
-});
+function changeNiveau()
+{
+    if($('#section option:selected').val() !== "")
+    {
+        var nbNiveau = parseInt($('#section option:selected').attr('data-nbNiveau'));
+        var section = $('#section option:selected').val();
 
-$('#niveau').change( function() 
-{ 
-    oTable.fnFilter($(this).val());
-});
-
-$('#annee').change( function() 
-{ 
-    oTable.fnFilter($(this).val());
-});
-
-$('#stage').change( function() 
-{ 
-    oTable.fnFilter($(this).val());
-});
+        for(var i = 1 ; i < nbNiveau + 1 ; i++)
+        {
+            var classe = section + i;
+            $('#classe').append('<option value="'+ classe +'">'+ classe +'</option>');
+        }
+    }
+}
