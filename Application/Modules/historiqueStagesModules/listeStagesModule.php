@@ -1,6 +1,7 @@
 <table id="listeStages">
     <thead>
         <tr>
+            <th>Etat</th>
             <th>Etudiant</th>
             <th>Classe</th>
             <th>Organisme d'accueil</th>
@@ -19,13 +20,20 @@
                 $unEtudiant['adresseOrganisme'] = "/";
                 $unEtudiant['telephoneOrganisme'] = "/";
                 $stage = "Non";
+                $circle="circle-red";
             }
             else
             {
                 $stage = "Oui";
+                $circle="circle-green";
             }
         ?>
-            <tr data-toggle="modal" href="#">
+            <tr data-toggle="modal" class="sansStage" href="#">
+                <td data-label="Etat">
+                    <span class="td-responsive">
+                        <div class="<?php echo($circle); ?>"></div>
+                    </span>
+                </td>
                 <td data-label="Etudiant">
                     <span class="td-responsive">  
                         <?php echo($unEtudiant['nom'].' '.$unEtudiant['prenom']);?>
@@ -52,7 +60,8 @@
                     </span>
                 </td>
                 <td class="hide">                                            
-                    <?php echo($unEtudiant['annee']);?>
+                    <?php echo(dateAnglaisVersFrancais($unEtudiant['dateDebut'])
+                    .'-'.dateAnglaisVersFrancais($unEtudiant['dateFin']));?>
                 </td>
                 <td class="hide">                                            
                     <?php echo($stage);?>

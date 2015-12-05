@@ -30,3 +30,23 @@ function getLaPeriode($codePeriode, $connexion)
     return $resultat;
 }
 
+function getLesPeriodesParClasse($libelleSection,$niveau,$connexion)
+{
+    $req = $connexion->prepare('SELECT dateDebut, dateFin '
+            . 'FROM periode_stage p '
+            . 'INNER JOIN classe c '
+            . 'ON c.codeClasse = p.codeClasse '
+            . 'INNER JOIN section s '
+            . 'ON s.codeSection = c.codeSection '
+            . 'WHERE libelleSection = :libelleSection '
+            . 'AND niveau = :niveau');
+    
+    $req->bindValue(':libelleSection',$libelleSection);
+    $req->bindValue(':niveau',$niveau);
+    
+    $req->execute();
+    $resultat = $req->fetchAll();
+    
+    return $resultat;
+}
+

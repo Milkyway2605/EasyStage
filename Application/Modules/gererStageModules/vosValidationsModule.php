@@ -12,7 +12,11 @@
             </tr>
         </thead>
         <tbody>
-            <?php 
+            <?php
+                if(count($mesStages)== 0)
+                {
+                    echo('<tr class="odd"><td class="dataTables_empty" colspan="8" valign="top">Aucun élément à afficher</td></tr>');
+                }
                 foreach($mesStages as $unStage)
                 {
                     $infosEtudiant = getInfosEtudiantCodeInscription($unStage['codeInscription'], $connexion);

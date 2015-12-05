@@ -13,7 +13,6 @@ if(isset($_GET['id']))
     $statut = (int)$_GET['statut'];
     $anneeUniversitaire = $_SESSION['anneeScolaire'];
     
-    $reussite = setStatut($codeStage, $emailEtudiant, $emailEnseignant, $statut, $anneeUniversitaire, $connexion);
-    
+    $reussite = setStatut($codeStage, $emailEtudiant, $emailEnseignant, $statut, $anneeUniversitaire, $connexion);    
 }
 

@@ -1,0 +1,26 @@
+SELECT
+  c.codeclasse,p.codeperiode,
+  i.email,nom,prenom,codestage,
+  p.datedebut,datefin
+FROM periode_stage p
+LEFT OUTER JOIN classe c 
+ON c.codeclasse = p.codeclasse
+LEFT OUTER JOIN inscrit i 
+ON i.codeclasse = c.codeclasse
+INNER JOIN utilisateurs u 
+ON u.email = i.email
+LEFT OUTER JOIN stage s 
+ON s.codeperiode = p.codeperiode 
+AND s.codeinscription = i.codeinscription
+ORDER BY 1,p.codeperiode,nom
+
+
+
+
+-------------------- VERSION 2 ---------------------
+
+
+
+
+
+SELECT u.nom, u.prenom,CONCAT(libelleSection, niveau)AS Classe,p.dateDebut, p.dateFin,o.nom AS nomOrganisme,CONCAT(o.adresse,", ",o.codePostal," ",o.ville) AS adresseOrganisme FROM classe c RIGHT JOIN periode_stage p ON p.codeClasse = c.codeClasse LEFT JOIN inscrit i ON i.codeClasse = c.codeClasse INNER JOIN utilisateurs u ON u.email = i.email LEFT OUTER JOIN stage s ON s.codeperiode = p.codeperiode AND s.codeinscription = i.codeinscription LEFT JOIN organisme o ON o.codeOrganisme = s.codeOrganisme INNER JOIN section se ON se.codeSection = c.codeSection INNER JOIN enseigne e ON e.codeSection = se.codeSection WHERE e.email = "jean-francois.renaut@ac-lille.fr" UNION SELECT u.nom, u.prenom,CONCAT(libelleSection, niveau)AS Classe,p.dateDebut, p.dateFin,o.nom AS nomOrganisme,CONCAT(o.adresse,", ",o.codePostal," ",o.ville) AS adresseOrganisme FROM classe c LEFT JOIN periode_stage p ON p.codeClasse = c.codeClasse LEFT OUTER JOIN inscrit i ON i.codeclasse = c.codeclasse INNER JOIN utilisateurs u ON u.email = i.email LEFT OUTER JOIN stage s ON s.codeperiode = p.codeperiode AND s.codeinscription = i.codeinscription LEFT JOIN organisme o ON o.codeOrganisme = s.codeOrganisme INNER JOIN section se ON se.codeSection = c.codeSection INNER JOIN enseigne e ON e.codeSection = se.codeSection WHERE e.email = "jean-francois.renaut@ac-lille.fr"

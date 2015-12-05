@@ -15,4 +15,5 @@ $fmk->initRoute("creerEtudiant", "creerEtudiant.php", "Controller/creerEtudiant.
 $fmk->initRoute("gererStage", "gererStage.php", "Controller/gererStage.php", "index");
 $fmk->initRoute("classes", "classes.php", "Controller/classes.php", "index");
 $fmk->initRoute("historiqueStages", "historiqueStages.php", "Controller/historiqueStages.php", "index");
+$fmk->initRoute("gestionPeriode", "gestionPeriode.php", "Controller/gestionPeriode.php", "index");
 

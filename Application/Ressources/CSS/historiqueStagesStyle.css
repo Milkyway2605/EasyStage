@@ -35,3 +35,22 @@ table td, table th
 {
     text-align: justify;
 }
+
+.circle-red { 
+   width: 10px;
+   height: 10px;
+   border-radius: 5px;
+   background-color: #FC6E51;
+}
+
+.circle-green { 
+   width: 10px;
+   height: 10px;
+   background-color: #A0D468;
+   border-radius: 5px;
+}
+
+label
+{
+    font-size: 14px;
+}

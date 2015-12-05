@@ -3,9 +3,8 @@ session_start();
 
 //Fonction utilitaires
 include_once 'Application/Features/backConnexion.php';
-include_once 'Application/Features/date.php';
-include_once 'Application/Features/getAnneeScolaire.php';
 include_once 'Application/Features/autorisationAcces.php';
+include_once 'Application/Features/date.php';
 
 //Fonction d'accès aux données
 include_once 'Modeles/accesBDD.php';

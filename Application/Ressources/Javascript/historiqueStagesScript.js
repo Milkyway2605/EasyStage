@@ -4,6 +4,8 @@ oTable = $('#listeStages').DataTable(
 {
     "info":        false,
     "paging":      false,
+    "order": [[ 1, "asc" ]],
+    "columnDefs": [ { "targets": 0, "orderable": false } ],
     language: {
         processing:     "Traitement en cours...",
         search:         "Rechercher&nbsp;:",
@@ -28,30 +30,23 @@ oTable = $('#listeStages').DataTable(
     }    
 });
 
-$('#select').change(function () {
-    oTable
-        .columns(1).search($('#stage option:selected').val()).draw();
+$('#section').change( function() 
+{ 
+    oTable.columns(2).search($('#section option:selected').val()).draw();
+});
+
+$('#classe').change( function() 
+{ 
+    oTable.columns(2).search($('#classe option:selected').val()).draw();
+});
+
+$('#periode').change(function () {
+    oTable.columns(6).search($('#periode option:selected').val()).draw();
 } );
 
-//$('#section').change( function() 
-//{ 
-//    oTable.fnFilter($(this).val());
-//});
-//
-//$('#classe').change( function() 
-//{ 
-//    oTable.fnFilter($(this).val());
-//});
-//
-//$('#annee').change( function() 
-//{ 
-//    oTable.fnFilter($(this).val());
-//});
-//
-//$('#stage').change( function() 
-//{ 
-//    oTable.fnFilter($(this).val());
-//});
+$('#stage').change(function () {
+    oTable.columns(7).search($('#stage option:selected').val()).draw();
+} );
 
 $('#section').change(function()
 {
@@ -65,7 +60,28 @@ $('#section').change(function()
     else
     {
         $('#classe').attr('disabled','true');
+        $('#classe').empty();
+        $('#classe').append('<option value="">Toutes</option>');
+        
+        $('#periode').attr('disabled','true');
+        $('#periode').empty();
+        $('#periode').append('<option>Pas de période disponible</option>');
     }    
+});
+
+$('#classe').change(function()
+{
+    if($('#classe option:selected').val() !== "")
+    {
+        changePeriode();
+        $('#periode').removeAttr('disabled');
+    }
+    else
+    {
+        $('#periode').attr('disabled','true');
+        $('#periode').empty();
+        $('#periode').append('<option>Pas de période disponible</option>');
+    }
 });
 
 function changeNiveau()
@@ -81,4 +97,24 @@ function changeNiveau()
             $('#classe').append('<option value="'+ classe +'">'+ classe +'</option>');
         }
     }
+}
+
+function changePeriode()
+{
+    var classe = $('#classe option:selected').val();
+    var section = classe.substring(0,classe.length - 1);
+    var niveau = classe.substring(classe.length - 1,classe.length);
+    
+    $.ajax(
+    {
+        type: 'post',
+        url: 'Application/Features/donnePeriodeStageSelonClasse.php',
+        data: {libelleSection: section, niveau: niveau},
+        dataType : 'html',
+        success: function(data) 
+        {
+            $('#periode').empty();
+            $('#periode').append(data);
+        }
+    });
 }
