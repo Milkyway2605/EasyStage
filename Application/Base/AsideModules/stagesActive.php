@@ -37,7 +37,7 @@
             if($_SESSION['typeUtilisateur'] == 'Enseignant')
             {
                 echo('<li>');
-                echo('<a href="historiqueStages.php">Historique</a>');
+                echo('<a href="syntheseStage.php">Synthèse</a>');
                 echo('</li>');
             }
         ?>
