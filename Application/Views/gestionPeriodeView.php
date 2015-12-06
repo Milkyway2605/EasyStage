@@ -21,12 +21,12 @@ include_once 'Application/Base/layout_content_02.php';
 ?>
     
 <article class='article col-lg-12 col-md-12'>
-    <div class='col-lg-9'>
+    <div class='col-lg-5 col-lg-offset-1'>
         <div class="panel">
             
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-5">
         <div class="panel">
             <div class="panel-heading">
                 <div class="panel-title">Informations diverses</div>

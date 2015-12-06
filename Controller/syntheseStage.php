@@ -5,6 +5,7 @@ session_start();
 include_once 'Application/Features/backConnexion.php';
 include_once 'Application/Features/autorisationAcces.php';
 include_once 'Application/Features/date.php';
+include_once 'Application/Features/formatageChaine.php';
 
 //Fonction d'accès aux données
 include_once 'Modeles/accesBDD.php';
@@ -19,4 +20,12 @@ $lesSections = getLesSections($emailEnseignant, $connexion);
 $lesAnnees = getLesAnnees($connexion);
 $lesEtudiants = getLesEtudiants($emailEnseignant, $connexion);
 
-include_once 'Application/Views/syntheseStageView.php';
+if(autorisationAcces($_SESSION['codeUtilisateur'], '!=', 2) == false)
+{
+    header('Location: accueil.php');
+    exit;
+}
+else
+{
+    include_once 'Application/Views/syntheseStageView.php';
+}

@@ -14,6 +14,6 @@ $fmk->initRoute("forgetPassword", "forgetPassword.php", "Controller/forgetPasswo
 $fmk->initRoute("creerEtudiant", "creerEtudiant.php", "Controller/creerEtudiant.php", "index");
 $fmk->initRoute("gererStage", "gererStage.php", "Controller/gererStage.php", "index");
 $fmk->initRoute("classes", "classes.php", "Controller/classes.php", "index");
-$fmk->initRoute("historiqueStages", "historiqueStages.php", "Controller/historiqueStages.php", "index");
 $fmk->initRoute("syntheseStage", "syntheseStage.php", "Controller/syntheseStage.php", "index");
+$fmk->initRoute("gestionPeriode", "gestionPeriode.php", "Controller/gestionPeriode.php", "index");
 

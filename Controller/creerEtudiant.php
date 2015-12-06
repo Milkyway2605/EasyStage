@@ -6,6 +6,7 @@ include_once 'Application/Features/backConnexion.php';
 include_once 'Application/Features/date.php';
 include_once 'Application/Features/getAnneeScolaire.php';
 include_once 'Application/Features/autorisationAcces.php';
+include_once 'Application/Features/formatageChaine.php';
 
 //Fonction d'accès aux données
 include_once 'Modeles/accesBDD.php';
@@ -29,8 +30,8 @@ else
    if(isset($_POST['telephone']))
     {
         $email = strtolower($_POST['email']);
-        $password = $_POST['password'];
-        $nom = $_POST['nom'];
+        $password = premiereLettreMajuscule($_POST['password']);
+        $nom = premiereLettreMajuscule($_POST['nom']);
         $prenom = $_POST['prenom'];
         $codeUtilisateur = 3;
         $telephone = $_POST['telephone'];

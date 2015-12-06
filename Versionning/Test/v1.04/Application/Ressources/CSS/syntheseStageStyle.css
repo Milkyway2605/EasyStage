@@ -1,0 +1,56 @@
+input[type="checkbox"] 
+{
+    margin: 1px 0px 0px;
+}
+
+fieldset
+{
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    padding: 6px 12px;
+}
+
+#listeStages_filter
+{
+    display: none;
+}
+
+.filtre
+{
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.no-padding
+{
+    padding : 0;
+}
+
+select[disabled]
+{
+    color: #CCC;
+}
+
+table td, table th
+{
+    text-align: justify;
+}
+
+.circle-red { 
+   width: 10px;
+   height: 10px;
+   border-radius: 5px;
+   background-color: #FC6E51;
+}
+
+.circle-green { 
+   width: 10px;
+   height: 10px;
+   background-color: #A0D468;
+   border-radius: 5px;
+}
+
+label
+{
+    font-size: 14px;
+}

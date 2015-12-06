@@ -1,0 +1,131 @@
+.centrerButton
+{
+    text-align: center;
+    margin: 0;
+}
+
+#livres
+{
+    height: 100%;
+}
+
+input[type="checkbox"] 
+{
+    margin: 1px 0px 0px;
+}
+
+fieldset
+{
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    padding: 6px 12px;
+}
+
+.fa-plus-circle
+{
+    color: #18A689;
+    margin-right: 5px;
+}
+
+.periode
+{
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #466FC1;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.fa
+{
+    line-height: -2;
+}
+
+a.fa-pencil
+{
+    cursor: pointer;
+}
+
+a.fa-pencil:hover, a.fa-pencil:active, a.fa-pencil:focus
+{
+    text-decoration: none;
+    outline: none;
+}
+
+.addPeriode, .addPeriode:hover, 
+.addPeriode:active, .addPeriode:focus
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+tbody tr:hover
+{
+    background-color: #EDEDED;
+}
+
+.table-vertical {
+  border: 0;
+}
+
+.table-vertical thead {
+  display: none;
+}
+
+.table-vertical tr {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.table-vertical td {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.table-vertical td:last-child {
+  border-bottom: 0;
+}
+
+.table-vertical td:before {
+  content: attr(data-label);
+  float: left;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.table-vertical tr:hover
+{
+    background-color: initial;
+}
+
+.modal-dialog
+{
+    width: 800px;
+}
+
+.modal-body h5
+{
+    margin-bottom: 10px;
+}
+
+.pageContainer section .sectionContainer .contentHeading
+{
+    margin-bottom: 10px;
+}
+
+a[data-toggle="tab"]
+{
+    margin-left: 5px;
+}
+
+.containerRetourMenu
+{
+    margin-bottom: 10px;
+}
+
+#selectionClasse
+{
+    margin-top: 10px;
+}

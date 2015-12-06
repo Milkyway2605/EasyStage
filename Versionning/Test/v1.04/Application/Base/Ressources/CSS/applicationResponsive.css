@@ -1,0 +1,107 @@
+@media screen and (min-width: 768px)
+{
+    .pageContainer nav
+    {
+        height: 55px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    }
+    
+    .pageContainer aside .panel
+    {
+        padding-top: 55px;
+    }
+    
+    .pageContainer nav .navbarHeader .fa-bars
+    {
+        display: none;
+    }
+    
+    .pageContainer nav .navbarBody a.icon
+    {
+        color: white;
+    }
+    
+    .pageContainer section
+    {
+        margin-left: 220px;
+    }
+    
+    .pageContainer aside, 
+    .pageContainer aside .panel
+    {
+        margin-left: 0;
+    }
+    
+    ul.dropdown-menu
+    {
+        left: auto;
+        right: 56px;
+    }
+    
+    .pageContainer footer
+    {
+        margin-left: 220px;
+    }
+}
+
+@media screen and (max-width: 991px)
+{
+    .hide4small
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    .pageContainer nav
+    {
+        height: 110px;
+    }
+    
+    .pageContainer aside .panel
+    {
+        padding-top: 110px;
+    }
+    
+    .pageContainer nav .navbarHeader
+    {
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+    
+    .pageContainer nav .navbarBody
+    {
+        background-color: white;
+        border: 1px solid #DDD;
+    }
+    
+    .pageContainer section
+    {
+        margin-left: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .pageContainer aside, 
+    .pageContainer aside .panel
+    {
+        margin-left: -220px;
+    }
+    
+    ul.dropdown-menu
+    {
+        left: 0;
+        right: 0;
+    }
+    
+    .pageContainer footer
+    {
+        margin-left: 0;
+    }
+    
+    .hide4small
+    {
+        display: none;
+    }
+}

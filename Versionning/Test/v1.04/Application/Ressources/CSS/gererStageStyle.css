@@ -1,0 +1,56 @@
+#validationStage
+{
+    min-height: 320px;
+}
+
+.tab-pane
+{
+    padding: 10px 0 10px 10px;
+}
+
+.container-fluid
+{
+    padding: 0;
+}
+
+.label
+{
+    padding: 4px 15px;
+}
+
+.fa-check-circle
+{
+    color: #18A689;
+    margin: 0 3px;
+}
+
+.fa-check-circle:active
+{
+    color: #127C65;
+}
+
+.fa-times-circle
+{
+    color: #860B0B;
+    margin: 0 3px;
+}
+
+.fa-times-circle:active
+{
+    color: #630707;
+}
+
+.fa-lg 
+{
+    font-size: 1.5em;
+    line-height: 0.80em;
+    vertical-align: -15%;
+}
+
+button
+{
+    border: none;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}

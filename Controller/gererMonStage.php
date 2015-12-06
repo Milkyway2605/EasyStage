@@ -34,5 +34,3 @@ else
 {
     include_once 'Application/Views/gererMonStageView.php';
 }
-
-?>

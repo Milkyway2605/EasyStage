@@ -27,7 +27,7 @@
                 }
                 else
                 {
-                    echo('<a href="#">Périodes</a>');
+                    echo('<a href="gestionPeriode.php">Périodes</a>');
                 }
 
             ?>

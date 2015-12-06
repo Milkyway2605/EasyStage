@@ -15,8 +15,8 @@ echo(displayAside($_SESSION['codeUtilisateur'], 'stages'));
 include_once 'Application/Base/layout_content_01.php';
 ?>
 
-    Historique des stages
-    <small>Consulter l'historique des stages par classe</small>
+    Synthèse des stages
+    <small>Consulter la synthèse des stages</small>
 
 <?php
 include_once 'Application/Base/layout_content_02.php';
