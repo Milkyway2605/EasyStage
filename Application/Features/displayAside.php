@@ -15,10 +15,6 @@ function displayAside($userType, $activeCategory)
     $profil = 'Application/Base/AsideModules/profil.php';
     $profilActive = 'Application/Base/AsideModules/profilActive.php';
     $gestion = 'Application/Base/AsideModules/gestionCategory.php';
-    $utilisateurs = 'Application/Base/AsideModules/utilisateurs.php';
-    $utilisateursActive = 'Application/Base/AsideModules/utilisateursActive.php';
-    $classes = 'Application/Base/AsideModules/classes.php';
-    $classesActive = 'Application/Base/AsideModules/classesActive.php';
     $stages = 'Application/Base/AsideModules/stages.php';
     $stagesActive = 'Application/Base/AsideModules/stagesActive.php';
     $autres = 'Application/Base/AsideModules/autresCategory.php';

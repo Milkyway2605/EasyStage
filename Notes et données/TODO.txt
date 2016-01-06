@@ -1,1 +1,9 @@
-Dans le menu création de classe, créer le nombre de classe selon la valeur saisie dans nbNiveau avec une boucle.
+1) Impression synthèse stage
+2) Passage ville en majuscule en BDD + nom organisme + nom étudiant
+3) Validation -> suppression libellé + ajout nom organisme + ville
+4) Fênetre modale avec information du stage dans la synthèse + possiblité impression.
+5) Créer et modifier période stage.
+6) Modification stage
+7) PARTIE ADMINISTRATION : Menu création utlisateur, menu création section + classes, gestion classe (Modification classe + basculement éleves), gestion convention
+8) Profil
+9) Notification
